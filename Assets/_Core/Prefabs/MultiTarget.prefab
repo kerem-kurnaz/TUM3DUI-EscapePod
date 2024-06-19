@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8095588766377962686}
   - component: {fileID: 7142177512773498324}
   - component: {fileID: 8765638329589123009}
-  - component: {fileID: 569723308249449758}
   m_Layer: 0
   m_Name: MultiTarget
   m_TagString: Untagged
@@ -59,7 +58,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 569723308249449758}
+  mPreview: {fileID: 0}
 --- !u!114 &7142177512773498324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,24 +104,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &8765638329589123009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3409643559987381892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1493616031, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 8095588766377962686}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: qrcode_marker_2022
-  mDatasetName: Vuforia/3DUI.xml
-  mCastedBehaviour: {fileID: 8095588766377962686}
-  mBaseMesh: {fileID: 0}
---- !u!114 &569723308249449758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -55,6 +55,14 @@
   }
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../Builds/3DUI\TUM_3DUI_Project.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\kurna\Desktop\UnityProjects\Builds\3DUI" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.33f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\kurna\Desktop\UnityProjects\TUM_3DUI_Project -debugCodeOptimization" />
@@ -101,7 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1718717960410</updated>
       <workItem from="1718717962068" duration="1242000" />
-      <workItem from="1718815112830" duration="3360000" />
+      <workItem from="1718815112830" duration="3955000" />
     </task>
     <servers />
   </component>

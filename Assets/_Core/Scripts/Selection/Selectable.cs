@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -5,23 +6,35 @@ namespace _Core.Scripts.Selection
 {
     public class Selectable : MonoBehaviour
     {
-        public Material highlightMaterial;
-        private Material _defaultMaterial;
-
-        private bool _activeState = false;
+        public Action<Selection> OnSelect;
+        public Action<Selection> OnDeselect;
+        
+        [SerializeField] private Material highlightMaterial;
+        
+        private Selection _selection;
         private Renderer _renderer;
+        private Material _defaultMaterial;
+        private Color _defaultHighlightColor;
+        private bool _activeState = false;
 
         private void Awake()
         {
-            _defaultMaterial = new Material(GetComponent<Renderer>().material);
-            _renderer = GetComponent<Renderer>();
+            _defaultHighlightColor = highlightMaterial.color;
+            _selection = GetComponent<Selection>();
+            _renderer = transform.parent.GetComponent<Renderer>();
+            _defaultMaterial = new Material(_renderer.material);
+        }
+
+        private void OnDisable()
+        {
+            highlightMaterial.color = _defaultHighlightColor;
         }
 
         private void Update () {
             if( _activeState && Input.GetKeyDown(KeyCode.Mouse0))
             {
                 // remove using System; entry that is auto generated
-                _defaultMaterial.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+                highlightMaterial.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
             }
         }
 
@@ -29,12 +42,14 @@ namespace _Core.Scripts.Selection
         {
             _activeState = true;
             _renderer.material = highlightMaterial;
+            OnSelect?.Invoke(_selection);
         }
 
         public void DeSelect()
         {
             _activeState = false;
             _renderer.material = _defaultMaterial ;
+            OnDeselect?.Invoke(_selection);
         }
 
         public bool IsSelected()

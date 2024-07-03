@@ -6,8 +6,10 @@ namespace _Core.Scripts.Selection
     public class Selector : MonoBehaviour
     {
         [SerializeField] private Transform selectorStartPoint;
+        [SerializeField] private LayerMask selectableLayers;
 
         private bool _canSelect = false;
+        
         private Selectable _lastSelection = null;
         private Vector3 _selectionDirection;
 
@@ -28,19 +30,18 @@ namespace _Core.Scripts.Selection
             if (!_canSelect)
                 return;
             
-            // position offset avoids self collision with non centered colliders
             _selectionDirection = selectorStartPoint.forward;
-            var intersects = Physics.Raycast(selectorStartPoint.position + _selectionDirection * 0.1f, _selectionDirection, out var hitInfo);
+            var intersects = Physics.Raycast(selectorStartPoint.position, _selectionDirection, out var hitInfo, Mathf.Infinity, selectableLayers);
             if (intersects)
             {
-                var newSelection = hitInfo.transform.gameObject.GetComponent<Selectable>();
+                var newSelection = hitInfo.transform.gameObject.GetComponentInChildren<Selectable>();
                 // Only activate new selectable if previous one was deselected
-                if(!_lastSelection && newSelection != _lastSelection)
+                if(_lastSelection && newSelection != _lastSelection)
                 {
                     _lastSelection.DeSelect();
                     _lastSelection = null;
                 }
-                if (!newSelection)
+                if (newSelection)
                 {
                     newSelection.Select();
                     _lastSelection = newSelection;
@@ -48,7 +49,7 @@ namespace _Core.Scripts.Selection
             }
             else
             {
-                if (!_lastSelection)
+                if (_lastSelection)
                 {
                     _lastSelection.DeSelect();
                     _lastSelection = null;
@@ -59,11 +60,8 @@ namespace _Core.Scripts.Selection
 
         private void OnDrawGizmos()
         {
-            if (!_canSelect)
-                return;
-            
             Gizmos.color = Color.red;
-            Gizmos.DrawRay(selectorStartPoint.position + _selectionDirection * 1f, _selectionDirection);
+            Gizmos.DrawRay(selectorStartPoint.position, _selectionDirection * 999f);
         }
         
         private void EnableCanSelect()

@@ -6,16 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="3f0820fc-deaa-408d-95bd-2db7f3d8067f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TUM_3DUI_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TUM_3DUI_Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/Blaster/Blaster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Prefabs/Blaster/Blaster.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/Cube.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/Cube.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/ManWithHat.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/ManWithHat.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/ActiveCube.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/ActiveCube.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/Selector.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Prefabs/Selector.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Core/Scenes/FPSTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scenes/FPSTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/Blaster/BulletMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/Blaster/BulletMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/Blaster/Shooting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/Blaster/Shooting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/Selection/Selectable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/Selection/Selectable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/Selection/Selector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/Selection/Selector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +25,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SelectionVirtualHand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Core/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Core/Scripts/Selection/Selection.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -118,7 +116,7 @@
       <workItem from="1718717962068" duration="1242000" />
       <workItem from="1718815112830" duration="3955000" />
       <workItem from="1720028260646" duration="544000" />
-      <workItem from="1720028833517" duration="3636000" />
+      <workItem from="1720028833517" duration="8620000" />
     </task>
     <servers />
   </component>
@@ -127,6 +125,17 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

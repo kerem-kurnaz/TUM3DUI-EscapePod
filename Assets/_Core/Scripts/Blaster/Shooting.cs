@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace _Core.Scripts.Blaster
@@ -8,14 +9,26 @@ namespace _Core.Scripts.Blaster
         [SerializeField] private float bulletSpeed = 10f;
         [SerializeField] private GameObject bullet;
         [SerializeField] private Transform gunPoint;
-
+        [SerializeField] private bool debugCanShoot = true;
+        
         private float _lastShootTime = -999f;
         private bool _canShoot = true;
 
+        private void Start()
+        {
+            GameManager.Instance.OnArControllerAvailable += EnableShooting;
+            GameManager.Instance.OnArControllerUnavailable += DisableShooting;
+        }
+        
+        private void OnDisable()
+        {
+            GameManager.Instance.OnArControllerAvailable -= EnableShooting;
+            GameManager.Instance.OnArControllerUnavailable -= DisableShooting;
+        }
+
         private void Update()
         {
-            //SwitchCanShootOnKey();
-            if (_canShoot && ShootCooldownReady())
+            if (_canShoot && debugCanShoot && ShootCooldownReady())
             {
                 Shoot();
             }
@@ -32,7 +45,6 @@ namespace _Core.Scripts.Blaster
 
         private void Shoot()
         {
-            Debug.Log("Shoot!");
             var newBullet = Instantiate(bullet, gunPoint.position, gunPoint.rotation);
             newBullet.transform.SetParent(GameManager.Instance.TemporaryObjects);
             var newBulletMovement = newBullet.GetComponent<BulletMovement>();

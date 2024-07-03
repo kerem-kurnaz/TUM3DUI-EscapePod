@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace _Core.Scripts.Selection
@@ -6,11 +7,30 @@ namespace _Core.Scripts.Selection
     {
         [SerializeField] private Transform selectorStartPoint;
 
+        private bool _canSelect = false;
         private Selectable _lastSelection = null;
+        private Vector3 _selectionDirection;
+
+        private void Start()
+        {
+            GameManager.Instance.OnArControllerAvailable += EnableCanSelect;
+            GameManager.Instance.OnArControllerUnavailable += DisableCanSelect;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.Instance.OnArControllerAvailable -= EnableCanSelect;
+            GameManager.Instance.OnArControllerUnavailable -= DisableCanSelect;
+        }
+
         private void FixedUpdate()
         {
+            if (!_canSelect)
+                return;
+            
             // position offset avoids self collision with non centered colliders
-            var intersects = Physics.Raycast(selectorStartPoint.position + selectorStartPoint.up * 0.1f, selectorStartPoint.up, out var hitInfo);
+            _selectionDirection = selectorStartPoint.forward;
+            var intersects = Physics.Raycast(selectorStartPoint.position + _selectionDirection * 0.1f, _selectionDirection, out var hitInfo);
             if (intersects)
             {
                 var newSelection = hitInfo.transform.gameObject.GetComponent<Selectable>();
@@ -39,8 +59,20 @@ namespace _Core.Scripts.Selection
 
         private void OnDrawGizmos()
         {
+            if (!_canSelect)
+                return;
+            
             Gizmos.color = Color.red;
-            Gizmos.DrawRay(selectorStartPoint.position + selectorStartPoint.up * 0.1f, selectorStartPoint.up);
+            Gizmos.DrawRay(selectorStartPoint.position + _selectionDirection * 1f, _selectionDirection);
+        }
+        
+        private void EnableCanSelect()
+        {
+            _canSelect = true;
+        }
+        private void DisableCanSelect()
+        {
+            _canSelect = false;
         }
     }
 }

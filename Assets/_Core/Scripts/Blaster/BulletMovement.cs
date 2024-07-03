@@ -11,10 +11,6 @@ namespace _Core.Scripts.Blaster
         private void Awake()
         {
             _canMove = false;
-        }
-
-        private void Start()
-        {
             GetRb();
         }
 
@@ -30,7 +26,6 @@ namespace _Core.Scripts.Blaster
         {
             if (_canMove)
             {
-                Debug.Log("Move!");
                 var direction = transform.forward;
                 _rb.velocity = direction * _bulletSpeed;
             }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace _Core.Scripts
@@ -54,13 +55,24 @@ namespace _Core.Scripts
 
         [SerializeField] private Transform temporaryObjects;
         public Transform TemporaryObjects => temporaryObjects;
-
+        public Action OnArControllerAvailable;
+        public Action OnArControllerUnavailable;
         private void Start()
         {
             if (!temporaryObjects)
             {
                 Debug.LogError("Temporary objects' transform is not set!");
             }
+        }
+        
+        public void InvokeArControllerAvailable()
+        {
+            OnArControllerAvailable?.Invoke();
+        }
+        
+        public void InvokeArControllerUnavailable()
+        {
+            OnArControllerUnavailable?.Invoke();
         }
     }
 }

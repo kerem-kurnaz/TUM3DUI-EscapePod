@@ -255,7 +255,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4475690166799470130, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
   m_PrefabInstance: {fileID: 4925036848513019378}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &462839066
+--- !u!114 &462839068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,10 +269,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 462839063}
   mHiddenRoot: {fileID: 0}
-  mTargetName: markercube1
-  mDatasetName: Vuforia/test_d.xml
+  mTargetName: qrcode_marker_2022
+  mDatasetName: Vuforia/3DUI.xml
   mCastedBehaviour: {fileID: 462839063}
-  mBaseMesh: {fileID: 860208994}
+  mBaseMesh: {fileID: 714570980}
 --- !u!1001 &474334408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -347,7 +347,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c323cf9afdeb52b4cb2a64b400c015eb, type: 3}
   m_PrefabInstance: {fileID: 1431876215}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &860208994
+--- !u!43 &714570980
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -686,8 +686,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1358089121}
   mHiddenRoot: {fileID: 0}
-  mTargetName: markercube1.Front
-  mDatasetName: Vuforia/test_d.xml
+  mTargetName: marker_interaction_02
+  mDatasetName: Vuforia/3DUI.xml
   mCastedBehaviour: {fileID: 1358089121}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
@@ -1072,11 +1072,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3409643559987381892, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3876926575643852005, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4475690166799470130, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1120,7 +1120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4494503629400221238, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7142177512773498324, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
       propertyPath: StatusFilter
@@ -1192,11 +1192,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8095588766377962686, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
       propertyPath: mDataSetPath
-      value: Vuforia/test_d.xml
+      value: Vuforia/3DUI.xml
       objectReference: {fileID: 0}
     - target: {fileID: 8095588766377962686, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
       propertyPath: mTrackableName
-      value: markercube1
+      value: qrcode_marker_2022
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8765638329589123009, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
@@ -1205,7 +1205,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3409643559987381892, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 462839066}
+      addedObject: {fileID: 462839068}
   m_SourcePrefab: {fileID: 100100000, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
 --- !u!4 &5778298479051800470
 Transform:
@@ -1232,11 +1232,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2592631438637501443, guid: 73f6636d6e89ada4db6d8f00e0a6e1ce, type: 3}
       propertyPath: mWidth
-      value: 4
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 2592631438637501443, guid: 73f6636d6e89ada4db6d8f00e0a6e1ce, type: 3}
       propertyPath: mHeight
-      value: 4
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 2592631438637501443, guid: 73f6636d6e89ada4db6d8f00e0a6e1ce, type: 3}
       propertyPath: mPreview
@@ -1244,11 +1244,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2592631438637501443, guid: 73f6636d6e89ada4db6d8f00e0a6e1ce, type: 3}
       propertyPath: mDataSetPath
-      value: Vuforia/test_d.xml
+      value: Vuforia/3DUI.xml
       objectReference: {fileID: 0}
     - target: {fileID: 2592631438637501443, guid: 73f6636d6e89ada4db6d8f00e0a6e1ce, type: 3}
       propertyPath: mTrackableName
-      value: markercube1.Front
+      value: marker_interaction_02
       objectReference: {fileID: 0}
     - target: {fileID: 2682770044238318385, guid: 73f6636d6e89ada4db6d8f00e0a6e1ce, type: 3}
       propertyPath: m_Name
@@ -1256,7 +1256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2682770044238318385, guid: 73f6636d6e89ada4db6d8f00e0a6e1ce, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5518752951517385821, guid: 73f6636d6e89ada4db6d8f00e0a6e1ce, type: 3}
       propertyPath: m_LocalPosition.x

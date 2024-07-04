@@ -6,17 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="3f0820fc-deaa-408d-95bd-2db7f3d8067f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TUM_3DUI_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TUM_3DUI_Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/ActiveCube.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/ActiveCube.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/Selectable.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/Selectable.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/Selector.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/Selector.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/Selection.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/Selection/Selectable.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/Selection/Selectable.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/Selection/Selector.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/Selection/Selector.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Core/Scenes/FPSTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scenes/FPSTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/Selection/MoveSelected.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/Selection/MoveSelected.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/Selection/Selectable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/Selection/Selectable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/Selection/Selection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/Selection/Selection.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/Selection/Selector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/Selection/Selector.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +28,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SelectionVirtualHand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Core/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Core/Scripts/Selection/MoveSelected.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Core/Scripts/Utility/LineUtil.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Core/Scripts/SnapToPosition.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -122,7 +119,7 @@
       <workItem from="1718717962068" duration="1242000" />
       <workItem from="1718815112830" duration="3955000" />
       <workItem from="1720028260646" duration="544000" />
-      <workItem from="1720028833517" duration="19846000" />
+      <workItem from="1720028833517" duration="21083000" />
     </task>
     <servers />
   </component>

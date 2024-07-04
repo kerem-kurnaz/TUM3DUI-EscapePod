@@ -8,9 +8,11 @@ namespace _Core.Scripts.Selection
     {
         public Action OnSelect;
         public Action OnDeselect;
+        public Transform SelectableTransform => _selectableTransform;
         
         [SerializeField] private Material highlightMaterial;
         
+        private Transform _selectableTransform;
         private Renderer _renderer;
         private Material _defaultMaterial;
         private Color _defaultHighlightColor;
@@ -18,8 +20,9 @@ namespace _Core.Scripts.Selection
 
         private void Awake()
         {
+            _selectableTransform = transform.parent;
             _defaultHighlightColor = highlightMaterial.color;
-            _renderer = transform.parent.GetComponent<Renderer>();
+            _renderer = _selectableTransform.GetComponent<Renderer>();
             _defaultMaterial = new Material(_renderer.material);
         }
 

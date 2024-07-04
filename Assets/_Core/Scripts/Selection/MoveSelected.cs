@@ -4,16 +4,20 @@ namespace _Core.Scripts.Selection
 {
     public class MoveSelected : MonoBehaviour
     {
-        [SerializeField] float moveSpeed = 5f;
+        public bool IsMoving => _isMoving;
+        
+        [SerializeField] private float moveSpeed = 5f;
+        
         private Selectable _selectable;
         private Selector _selector;
-    
+        private Rigidbody _rb;
+
         private bool _monitoringSelectionInput = false;
         private bool _canMove = false;
-        private Rigidbody _rb;
+        private bool _isMoving = false;
         private void Awake()
         {
-            _selectable = GetComponent<Selectable>();
+            _selectable = transform.parent.GetComponentInChildren<Selectable>();
             _rb = GetComponentInParent<Rigidbody>();
         }
 
@@ -65,11 +69,13 @@ namespace _Core.Scripts.Selection
         {
             if (!_canMove)
             {
+                _isMoving = false;
                 _rb.velocity = Vector3.zero;
                 return;
             }
-
-            var transformToBeMoved = transform.parent;
+            
+            _isMoving = true;
+            var transformToBeMoved = _selectable.SelectableTransform;
             var currentPosition = transformToBeMoved.position;
             var targetDirection = _selector.GetSelectorStartPoint().forward;
 

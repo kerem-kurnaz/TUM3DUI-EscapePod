@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1747197751757308738}
   - component: {fileID: 5156996865026063766}
-  - component: {fileID: 408585092124067613}
   m_Layer: 0
   m_Name: Selectable
   m_TagString: Untagged
@@ -46,15 +45,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: 22dee304794d0a04fa23aff1851f8895, type: 2}
---- !u!114 &408585092124067613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1215653402263387912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db407aea120a24a4086a0c6e6deb7781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

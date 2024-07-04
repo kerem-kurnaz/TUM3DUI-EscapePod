@@ -1,4 +1,5 @@
 using System;
+using _Core.Scripts.Selection;
 using UnityEngine;
 
 namespace _Core.Scripts
@@ -53,10 +54,15 @@ namespace _Core.Scripts
     
         #endregion
 
-        [SerializeField] private Transform temporaryObjects;
-        public Transform TemporaryObjects => temporaryObjects;
         public Action OnArControllerAvailable;
         public Action OnArControllerUnavailable;
+        
+        [SerializeField] private Transform temporaryObjects;
+        public Transform TemporaryObjects => temporaryObjects;
+
+        [SerializeField] private Selector selector;
+        public Selector Selector => selector;
+        
         private void Start()
         {
             if (!temporaryObjects)
@@ -73,6 +79,11 @@ namespace _Core.Scripts
         public void InvokeArControllerUnavailable()
         {
             OnArControllerUnavailable?.Invoke();
+        }
+        
+        public void SetSelector(Selector newSelector)
+        {
+            selector = newSelector;
         }
     }
 }

@@ -6,12 +6,11 @@ namespace _Core.Scripts.Selection
 {
     public class Selectable : MonoBehaviour
     {
-        public Action<Selection> OnSelect;
-        public Action<Selection> OnDeselect;
+        public Action OnSelect;
+        public Action OnDeselect;
         
         [SerializeField] private Material highlightMaterial;
         
-        private Selection _selection;
         private Renderer _renderer;
         private Material _defaultMaterial;
         private Color _defaultHighlightColor;
@@ -20,7 +19,6 @@ namespace _Core.Scripts.Selection
         private void Awake()
         {
             _defaultHighlightColor = highlightMaterial.color;
-            _selection = GetComponent<Selection>();
             _renderer = transform.parent.GetComponent<Renderer>();
             _defaultMaterial = new Material(_renderer.material);
         }
@@ -42,14 +40,14 @@ namespace _Core.Scripts.Selection
         {
             _activeState = true;
             _renderer.material = highlightMaterial;
-            OnSelect?.Invoke(_selection);
+            OnSelect?.Invoke();
         }
 
         public void DeSelect()
         {
             _activeState = false;
             _renderer.material = _defaultMaterial ;
-            OnDeselect?.Invoke(_selection);
+            OnDeselect?.Invoke();
         }
 
         public bool IsSelected()

@@ -13,6 +13,11 @@ namespace _Core.Scripts.Selection
         private Selectable _lastSelection = null;
         private Vector3 _selectionDirection;
 
+        private void Awake()
+        {
+            GameManager.Instance.SetSelector(this);
+        }
+
         private void Start()
         {
             GameManager.Instance.OnArControllerAvailable += EnableCanSelect;
@@ -71,6 +76,11 @@ namespace _Core.Scripts.Selection
         private void DisableCanSelect()
         {
             _canSelect = false;
+        }
+        
+        public Transform GetSelectorStartPoint()
+        {
+            return selectorStartPoint;
         }
     }
 }

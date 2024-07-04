@@ -1,9 +1,12 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace _Core.Scripts.SelectionAndManipulation
 {
     public class MoveSelected : MonoBehaviour
     {
+        public Action OnMoveInputUp;
         public bool IsMoving => _isMoving;
         
         [SerializeField] private float moveSpeed = 5f;
@@ -41,6 +44,7 @@ namespace _Core.Scripts.SelectionAndManipulation
             {
                 _canMove = false;
                 _monitoringSelectionInput = false;
+                OnMoveInputUp?.Invoke();
             }
         }
 

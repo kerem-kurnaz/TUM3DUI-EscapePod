@@ -15,8 +15,11 @@ namespace _Core.Scripts.SelectionAndManipulation
         private Transform _selectableTransform;
         private Renderer _renderer;
         private Material _defaultMaterial;
+        private Movable _movable;
         private Color _defaultHighlightColor;
         private bool _activeState = false;
+        
+        private bool _isBeingMoved = false;
 
         private void Awake()
         {
@@ -24,6 +27,13 @@ namespace _Core.Scripts.SelectionAndManipulation
             _defaultHighlightColor = highlightMaterial.color;
             _renderer = _selectableTransform.GetComponent<Renderer>();
             _defaultMaterial = new Material(_renderer.material);
+        }
+
+        private void Start()
+        {
+            _movable.OnStartMoving += SetIsBeingMovedTrue;
+            _movable.OnStopMoving += SetIsBeingMovedFalse;
+            _movable.OnStopMoving += SetMaterialToDefault;
         }
 
         private void OnDisable()
@@ -49,13 +59,37 @@ namespace _Core.Scripts.SelectionAndManipulation
         public void DeSelect()
         {
             _activeState = false;
-            _renderer.material = _defaultMaterial ;
+            if (!_isBeingMoved)
+            {
+                SetMaterialToDefault();
+            }
             OnDeselect?.Invoke();
         }
 
         public bool IsSelected()
         {
             return _activeState;
+        }
+        
+        public void SetMovable(Movable movable)
+        {
+            _movable = movable;
+        }
+        
+        private void SetIsBeingMovedTrue()
+        {
+            _isBeingMoved = true;
+        }
+        private void SetIsBeingMovedFalse()
+        {
+            _isBeingMoved = false;
+        }
+        private void SetMaterialToDefault()
+        {
+            if (!_activeState)
+            {
+                _renderer.material = _defaultMaterial;
+            }
         }
     }
 }

@@ -4,9 +4,11 @@ using UnityEngine;
 
 namespace _Core.Scripts.SelectionAndManipulation
 {
-    public class MoveSelected : MonoBehaviour
+    public class Movable : MonoBehaviour
     {
         public Action OnMoveInputUp;
+        public Action OnStartMoving;
+        public Action OnStopMoving;
         public bool IsMoving => _isMoving;
         
         [SerializeField] private float moveSpeed = 5f;
@@ -23,6 +25,7 @@ namespace _Core.Scripts.SelectionAndManipulation
         {
             _selectable = transform.parent.GetComponentInChildren<Selectable>();
             _rb = GetComponentInParent<Rigidbody>();
+            _selectable.SetMovable(this);
         }
 
         private void Start()
@@ -32,6 +35,12 @@ namespace _Core.Scripts.SelectionAndManipulation
             _selector = GameManager.Instance.Selector;
         }
 
+        private void OnDisable()
+        {
+            _selectable.OnSelect -= WaitForSelectionInput;
+            _selectable.OnDeselect -= DisableInputWaiting;
+        }
+
         private void Update()
         {
             if (_monitoringSelectionInput)
@@ -39,6 +48,7 @@ namespace _Core.Scripts.SelectionAndManipulation
                 if (Input.GetKey(KeyCode.Space))
                 {
                     _canMove = true;
+                    OnStartMoving?.Invoke();
                     // Check for forward movement
                     if (Input.GetKey(KeyCode.W))
                     {
@@ -59,6 +69,7 @@ namespace _Core.Scripts.SelectionAndManipulation
                 _canMove = false;
                 _monitoringSelectionInput = false;
                 OnMoveInputUp?.Invoke();
+                OnStopMoving?.Invoke();
             }
         }
 

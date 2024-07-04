@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace _Core.Scripts.Selection
+namespace _Core.Scripts.SelectionAndManipulation
 {
     public class Selectable : MonoBehaviour
     {
@@ -20,7 +20,7 @@ namespace _Core.Scripts.Selection
 
         private void Awake()
         {
-            _selectableTransform = transform.parent;
+            _selectableTransform = transform.parent.parent;
             _defaultHighlightColor = highlightMaterial.color;
             _renderer = _selectableTransform.GetComponent<Renderer>();
             _defaultMaterial = new Material(_renderer.material);

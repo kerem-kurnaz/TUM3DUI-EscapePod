@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Core.Scripts.Selection
+namespace _Core.Scripts.SelectionAndManipulation
 {
     public class MoveSelected : MonoBehaviour
     {

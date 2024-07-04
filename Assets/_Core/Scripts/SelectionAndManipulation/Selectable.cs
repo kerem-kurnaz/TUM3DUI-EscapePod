@@ -41,14 +41,6 @@ namespace _Core.Scripts.SelectionAndManipulation
             highlightMaterial.color = _defaultHighlightColor;
         }
 
-        private void Update () {
-            if( _activeState && Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                // remove using System; entry that is auto generated
-                highlightMaterial.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
-            }
-        }
-
         public void Select()
         {
             _activeState = true;

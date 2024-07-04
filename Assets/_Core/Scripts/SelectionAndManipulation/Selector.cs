@@ -62,12 +62,6 @@ namespace _Core.Scripts.SelectionAndManipulation
             }
         }
 
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawRay(selectorStartPoint.position, _selectionDirection * 999f);
-        }
-        
         private void EnableCanSelect()
         {
             _canSelect = true;

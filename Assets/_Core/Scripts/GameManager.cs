@@ -1,6 +1,7 @@
 using System;
 using _Core.Scripts.SelectionAndManipulation;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Core.Scripts
 {
@@ -60,8 +61,13 @@ namespace _Core.Scripts
         [SerializeField] private Transform temporaryObjects;
         public Transform TemporaryObjects => temporaryObjects;
 
-        [SerializeField] private Selector selector;
-        public Selector Selector => selector;
+        public Selector Selector { get; private set; }
+
+        [SerializeField] private Transform arCamera;
+        public Transform ArCamera => arCamera;
+        
+        [SerializeField] private Transform mainCameraTransform;
+        public Transform MainCameraTransform => mainCameraTransform;
         
         private void Start()
         {
@@ -69,8 +75,16 @@ namespace _Core.Scripts
             {
                 Debug.LogError("Temporary objects' transform is not set!");
             }
+            if (!arCamera)
+            {
+                Debug.LogError("AR Camera's transform is not set!");
+            }
+            if (!mainCameraTransform)
+            {
+                Debug.LogError("Main camera's transform is not set!");
+            }
         }
-        
+
         public void InvokeArControllerAvailable()
         {
             OnArControllerAvailable?.Invoke();
@@ -83,7 +97,7 @@ namespace _Core.Scripts
         
         public void SetSelector(Selector newSelector)
         {
-            selector = newSelector;
+            Selector = newSelector;
         }
     }
 }

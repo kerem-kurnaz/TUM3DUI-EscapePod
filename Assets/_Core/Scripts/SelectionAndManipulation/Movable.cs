@@ -4,9 +4,11 @@ using UnityEngine;
 
 namespace _Core.Scripts.SelectionAndManipulation
 {
-    public class MoveSelected : MonoBehaviour
+    public class Movable : MonoBehaviour
     {
         public Action OnMoveInputUp;
+        public Action OnStartMoving;
+        public Action OnStopMoving;
         public bool IsMoving => _isMoving;
         
         [SerializeField] private float moveSpeed = 5f;
@@ -18,10 +20,12 @@ namespace _Core.Scripts.SelectionAndManipulation
         private bool _monitoringSelectionInput = false;
         private bool _canMove = false;
         private bool _isMoving = false;
+        private float _forwardMovement = 0f;
         private void Awake()
         {
             _selectable = transform.parent.GetComponentInChildren<Selectable>();
             _rb = GetComponentInParent<Rigidbody>();
+            _selectable.SetMovable(this);
         }
 
         private void Start()
@@ -31,6 +35,12 @@ namespace _Core.Scripts.SelectionAndManipulation
             _selector = GameManager.Instance.Selector;
         }
 
+        private void OnDisable()
+        {
+            _selectable.OnSelect -= WaitForSelectionInput;
+            _selectable.OnDeselect -= DisableInputWaiting;
+        }
+
         private void Update()
         {
             if (_monitoringSelectionInput)
@@ -38,6 +48,20 @@ namespace _Core.Scripts.SelectionAndManipulation
                 if (Input.GetKey(KeyCode.Space))
                 {
                     _canMove = true;
+                    OnStartMoving?.Invoke();
+                    // Check for forward movement
+                    if (Input.GetKey(KeyCode.W))
+                    {
+                        _forwardMovement = 1f;
+                    }
+                    else if (Input.GetKey(KeyCode.S))
+                    {
+                        _forwardMovement = -1f;
+                    }
+                    else
+                    {
+                        _forwardMovement = 0f;
+                    }
                 }
             }
             if (_canMove && Input.GetKeyUp(KeyCode.Space))
@@ -45,6 +69,7 @@ namespace _Core.Scripts.SelectionAndManipulation
                 _canMove = false;
                 _monitoringSelectionInput = false;
                 OnMoveInputUp?.Invoke();
+                OnStopMoving?.Invoke();
             }
         }
 
@@ -87,6 +112,8 @@ namespace _Core.Scripts.SelectionAndManipulation
                 currentPosition);
         
             _rb.velocity = (movePoint - currentPosition) * moveSpeed;
+            //add the forward movement
+            _rb.velocity += _selector.GetSelectorStartPoint().forward * (_forwardMovement * moveSpeed);
         }
 
         private static Vector3 GetTargetPoint(Vector3 selectorForward, Vector3 selectorPosition, Vector3 currentPos)

@@ -5,18 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f0820fc-deaa-408d-95bd-2db7f3d8067f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Core/Prefabs/SelectionAndManipulation/Snappable.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Core/Prefabs/SelectionAndManipulation/Snappable.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/Snappable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/Snappable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/Snapper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/Snapper.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TUM_3DUI_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TUM_3DUI_Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/ActiveCube.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/ActiveCube.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/SelectionAndManipulation/SelectableAndMoveableCube.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Prefabs/SelectionAndManipulation/SelectableAndMoveableCube.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scenes/FPSTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scenes/FPSTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/MoveSelected.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/MoveSelected.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/ActiveCube.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/ActiveCube.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/InactiveMarker.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/InactiveMarker.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/PointingHand.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Prefabs/PointingHand.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scenes/FPSTest 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scenes/FPSTest 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/MoveSelected.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/Movable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/MoveSelected.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/Movable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/Selectable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/Selectable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/Snapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/Snapper.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,11 +27,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SelectionVirtualHand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Core/Scripts/ArCameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Core/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Core/Scripts/Selection/MoveSelected.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Core/Scripts/SnapToPosition.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -123,7 +121,7 @@
       <workItem from="1718815112830" duration="3955000" />
       <workItem from="1720028260646" duration="544000" />
       <workItem from="1720028833517" duration="21753000" />
-      <workItem from="1720099829604" duration="5688000" />
+      <workItem from="1720099829604" duration="12657000" />
     </task>
     <servers />
   </component>

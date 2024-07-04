@@ -18,6 +18,7 @@ namespace _Core.Scripts.SelectionAndManipulation
         private bool _monitoringSelectionInput = false;
         private bool _canMove = false;
         private bool _isMoving = false;
+        private float _forwardMovement = 0f;
         private void Awake()
         {
             _selectable = transform.parent.GetComponentInChildren<Selectable>();
@@ -38,6 +39,19 @@ namespace _Core.Scripts.SelectionAndManipulation
                 if (Input.GetKey(KeyCode.Space))
                 {
                     _canMove = true;
+                    // Check for forward movement
+                    if (Input.GetKey(KeyCode.W))
+                    {
+                        _forwardMovement = 1f;
+                    }
+                    else if (Input.GetKey(KeyCode.S))
+                    {
+                        _forwardMovement = -1f;
+                    }
+                    else
+                    {
+                        _forwardMovement = 0f;
+                    }
                 }
             }
             if (_canMove && Input.GetKeyUp(KeyCode.Space))
@@ -87,6 +101,8 @@ namespace _Core.Scripts.SelectionAndManipulation
                 currentPosition);
         
             _rb.velocity = (movePoint - currentPosition) * moveSpeed;
+            //add the forward movement
+            _rb.velocity += _selector.GetSelectorStartPoint().forward * (_forwardMovement * moveSpeed);
         }
 
         private static Vector3 GetTargetPoint(Vector3 selectorForward, Vector3 selectorPosition, Vector3 currentPos)

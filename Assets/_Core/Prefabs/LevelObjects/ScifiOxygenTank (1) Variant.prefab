@@ -152,11 +152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4761748953057529502, guid: 9206c781a0abd4947bfc5d520680a942, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0001480954
       objectReference: {fileID: 0}
     - target: {fileID: 4761748953057529502, guid: 9206c781a0abd4947bfc5d520680a942, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.0009755152
       objectReference: {fileID: 0}
     - target: {fileID: 4761748953057529502, guid: 9206c781a0abd4947bfc5d520680a942, type: 3}
       propertyPath: m_LocalPosition.z
@@ -164,23 +164,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4761748953057529502, guid: 9206c781a0abd4947bfc5d520680a942, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4761748953057529502, guid: 9206c781a0abd4947bfc5d520680a942, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4761748953057529502, guid: 9206c781a0abd4947bfc5d520680a942, type: 3}
-      propertyPath: m_LocalRotation.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4761748953057529502, guid: 9206c781a0abd4947bfc5d520680a942, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761748953057529502, guid: 9206c781a0abd4947bfc5d520680a942, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761748953057529502, guid: 9206c781a0abd4947bfc5d520680a942, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4761748953057529502, guid: 9206c781a0abd4947bfc5d520680a942, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4761748953057529502, guid: 9206c781a0abd4947bfc5d520680a942, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -188,11 +188,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4761748953057529502, guid: 9206c781a0abd4947bfc5d520680a942, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286928944910914596, guid: 9206c781a0abd4947bfc5d520680a942, type: 3}
       propertyPath: m_Name
       value: ScifiOxygenTank (1) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286928944910914596, guid: 9206c781a0abd4947bfc5d520680a942, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

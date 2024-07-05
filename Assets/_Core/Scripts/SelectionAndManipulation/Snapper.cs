@@ -7,9 +7,12 @@ namespace _Core.Scripts.SelectionAndManipulation
     public class Snapper : MonoBehaviour
     {
         [SerializeField] private Transform snapperObject;
+        [SerializeField] private Transform snappingPosition;
         [SerializeField] private SnapType snapperType;
         private Snappable _currentSnappable;
         private GameObject _snapHighlight;
+
+        private bool _isSnapped = false;
 
         private void Awake()
         {
@@ -36,6 +39,7 @@ namespace _Core.Scripts.SelectionAndManipulation
                 
                 _currentSnappable = snappable;
                 _currentSnappable.GetTargetToSnap().GetComponentInChildren<Movable>().OnMoveInputUp += SnapObject;
+                _currentSnappable.GetTargetToSnap().GetComponentInChildren<Movable>().OnStartMoving += SetIsSnappedFalse;
                 CreateHighlightClone(_currentSnappable.GetTargetToSnap().gameObject);
             }
         }
@@ -46,6 +50,7 @@ namespace _Core.Scripts.SelectionAndManipulation
             if (snappable != null && snappable == _currentSnappable)
             {
                 _currentSnappable.GetTargetToSnap().GetComponentInChildren<Movable>().OnMoveInputUp -= SnapObject;
+                _currentSnappable.GetTargetToSnap().GetComponentInChildren<Movable>().OnStartMoving -= SetIsSnappedFalse;
                 _currentSnappable = null;
                 DestroyHighlightClone();
             }
@@ -55,6 +60,7 @@ namespace _Core.Scripts.SelectionAndManipulation
         {
             if (_currentSnappable != null)
             {
+                _isSnapped = true;
                 DestroyHighlightClone();
                 _currentSnappable.SnapToPosition(GetSnapPosition(snapperObject));
             }
@@ -63,14 +69,24 @@ namespace _Core.Scripts.SelectionAndManipulation
         private static Vector3 GetSnapPosition(Transform snapper)
         {
             var snapperCollider = snapper.GetComponent<Collider>();
-            return snapper.position + Vector3.up * (snapperCollider.bounds.size.y);
+            var snapperRenderer = snapper.GetComponent<Renderer>();
+            return snapperRenderer.bounds.center;
+            //return snapper.position + Vector3.forward * (snapperCollider.bounds.size.x);
         }
         
         private void CreateHighlightClone(GameObject snappableObject)
         {
+            if (_isSnapped) return;
+            
             DestroyHighlightClone();
-
-            _snapHighlight = Instantiate(snappableObject, GetSnapPosition(snapperObject), snappableObject.transform.rotation);
+            var snapPos = GetSnapPosition(snapperObject);
+            
+            _snapHighlight = Instantiate(snappableObject, snapPos, Quaternion.identity);
+            
+            var highlightCenter = _snapHighlight.GetComponentInChildren<Snappable>().GetCenter();
+            var offset = snapPos - highlightCenter;
+            _snapHighlight.transform.position += offset;
+            
             _snapHighlight.transform.parent = snapperObject;
 
             RemoveUnwantedComponents(_snapHighlight);
@@ -100,23 +116,32 @@ namespace _Core.Scripts.SelectionAndManipulation
         private static void RemoveUnwantedComponents(GameObject obj)
         {
             var colliders = obj.GetComponentsInChildren<Collider>();
-            foreach (var col in colliders)
+            if (colliders.Length != 0)
             {
-                Destroy(col);
+                foreach (var col in colliders)
+                {
+                    Destroy(col);
+                }
             }
-            
+
             // Remove any other components that shouldn't be in the highlight
             var scripts = obj.GetComponentsInChildren<MonoBehaviour>();
-            foreach (var script in scripts)
+            if (scripts.Length != 0)
             {
-                Destroy(script);
+                foreach (var script in scripts)
+                {
+                    Destroy(script);
+                }
             }
 
             // If the original has Rigidbody, remove it
             var rigidbodies = obj.GetComponentsInChildren<Rigidbody>();
-            foreach (var rb in rigidbodies)
+            if (rigidbodies.Length != 0)
             {
-                Destroy(rb);
+                foreach (var rb in rigidbodies)
+                {
+                    Destroy(rb);
+                }
             }
         }
 
@@ -127,6 +152,10 @@ namespace _Core.Scripts.SelectionAndManipulation
                 Destroy(_snapHighlight);
             }
         }
-
+        
+        private void SetIsSnappedFalse()
+        {
+            _isSnapped = false;
+        }
     }
 }

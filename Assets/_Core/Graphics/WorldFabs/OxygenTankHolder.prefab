@@ -150,6 +150,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OxygenGauge
       objectReference: {fileID: 0}
+    - target: {fileID: 7888330047698079484, guid: 569be13391e83424a95ba5cbfc234558, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

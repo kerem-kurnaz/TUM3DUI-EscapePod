@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using _Core.Scripts.Level;
 using UnityEngine;
 
 namespace _Core.Scripts.Utility
@@ -53,9 +55,27 @@ namespace _Core.Scripts.Utility
         
         #endregion
 
+        public static Action OnBeforeStartGame;
+        public static Action OnStartGame;
+
         private void Start()
         {
+            StartCoroutine(StartGame());
+        }
+
+        private void OnDisable()
+        {
+            OnBeforeStartGame = null;
+            OnStartGame = null;
+        }
+
+        private IEnumerator StartGame()
+        {
+            OnBeforeStartGame?.Invoke();
             
+            yield return new WaitForSeconds(3f);
+            
+            OnStartGame?.Invoke();
         }
     }
 }

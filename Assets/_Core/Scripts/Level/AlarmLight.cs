@@ -25,6 +25,16 @@ namespace _Core.Scripts.Level
             _lowPassFilter = GetComponent<AudioLowPassFilter>();
         }
 
+        private void Start()
+        {
+            GameFlowManager.OnStartGame += SetAlarmLightStateTrue;
+        }
+
+        private void OnDisable()
+        {
+            GameFlowManager.OnStartGame -= SetAlarmLightStateTrue;
+        }
+
         private void LoopAlarmLightIntensity()
         {
             if (!_isActive)
@@ -43,7 +53,7 @@ namespace _Core.Scripts.Level
                 });
         }
         
-        public void SetAlarmLightState(bool isActive)
+        private void SetAlarmLightState(bool isActive)
         {
             _isActive = isActive;
             LoopAlarmLightIntensity();
@@ -56,6 +66,11 @@ namespace _Core.Scripts.Level
             {
                 _alarmSound.Stop();
             }
+        }
+
+        private void SetAlarmLightStateTrue()
+        {
+            SetAlarmLightState(true);
         }
 
         private void SlowlyIncreaseLowPassFilter()

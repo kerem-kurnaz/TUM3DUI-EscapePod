@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,25 +14,28 @@ namespace _Core.Scripts.Utility
 
         private void Start()
         {
-            if (blinkImage != null)
-            {
-                StartCoroutine(BlinkRoutine());
-            }
-            else
-            {
-                Debug.LogError("Blink Image is not assigned.");
-            }
+            GameFlowManager.OnStartGame += StartBlinking;
+        }
+
+        private void OnDisable()
+        {
+            GameFlowManager.OnStartGame -= StartBlinking;
+        }
+
+        private void StartBlinking()
+        {
+            StartCoroutine(BlinkRoutine());
         }
 
         private IEnumerator BlinkRoutine()
         {
-            for (int i = 0; i < blinkCount; i++)
+            for (var i = 0; i < blinkCount; i++)
             {
                 // Fade to black (close eyelids)
-                yield return StartCoroutine(FadeImage(1.0f, blinkDuration / 2));
+                yield return StartCoroutine(FadeImage(1.0f, blinkDuration * 0.7f));
 
                 // Fade to transparent (open eyelids)
-                yield return StartCoroutine(FadeImage(0.0f, blinkDuration / 2));
+                yield return StartCoroutine(FadeImage(0.0f, blinkDuration * 0.3f));
 
                 // Wait for a moment before the next blink
                 yield return new WaitForSeconds(delayBetweenBlinks);
@@ -41,13 +45,13 @@ namespace _Core.Scripts.Utility
         private IEnumerator FadeImage(float targetAlpha, float duration)
         {
             // Get the current color and alpha of the image
-            Color currentColor = blinkImage.color;
-            float startAlpha = currentColor.a;
+            var currentColor = blinkImage.color;
+            var startAlpha = currentColor.a;
 
             // Perform the fade over the specified duration
             for (float t = 0; t < duration; t += Time.deltaTime)
             {
-                float blend = Mathf.Clamp01(t / duration);
+                var blend = Mathf.Clamp01(t / duration);
                 currentColor.a = Mathf.Lerp(startAlpha, targetAlpha, blend);
                 blinkImage.color = currentColor;
                 yield return null;

@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minMaxIntensity: {x: 0, y: 3}
-  duration: 0.5
+  lightIncreaseDuration: 0.5
   ease: 6
 --- !u!82 &3613749752730439723
 AudioSource:
@@ -146,7 +146,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 70a210d6e0731fa40a996f6185eda2b9, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -246,7 +246,7 @@ AudioLowPassFilter:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.008640291
+      value: 0.03365166
       inSlope: 0
       outSlope: 0
       tangentMode: 0

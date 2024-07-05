@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4376188624543218378}
   - component: {fileID: 814421122571535691}
+  - component: {fileID: 9215243605275247711}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -47,3 +48,15 @@ MonoBehaviour:
   temporaryObjects: {fileID: 0}
   arCamera: {fileID: 0}
   mainCameraTransform: {fileID: 0}
+--- !u!114 &9215243605275247711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7816666830814751338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87c85f3d5658dd640bfcf594e5028b1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

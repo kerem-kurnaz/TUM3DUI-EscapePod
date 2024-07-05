@@ -31,17 +31,23 @@ namespace _Core.Scripts.SelectionAndManipulation
 
         private void Start()
         {
-            _movable.OnStartMoving += SetIsBeingMovedTrue;
-            _movable.OnStopMoving += SetIsBeingMovedFalse;
-            _movable.OnStopMoving += SetMaterialToDefault;
+            if (_movable)
+            {
+                _movable.OnStartMoving += SetIsBeingMovedTrue;
+                _movable.OnStopMoving += SetIsBeingMovedFalse;
+                _movable.OnStopMoving += SetMaterialToDefault;
+            }
         }
 
         private void OnDisable()
         {
             highlightMaterial.color = _defaultHighlightColor;
-            _movable.OnStartMoving -= SetIsBeingMovedTrue;
-            _movable.OnStopMoving -= SetIsBeingMovedFalse;
-            _movable.OnStopMoving -= SetMaterialToDefault;
+            if (_movable)
+            {
+                _movable.OnStartMoving -= SetIsBeingMovedTrue;
+                _movable.OnStopMoving -= SetIsBeingMovedFalse;
+                _movable.OnStopMoving -= SetMaterialToDefault;
+            }
         }
 
         public void Select()

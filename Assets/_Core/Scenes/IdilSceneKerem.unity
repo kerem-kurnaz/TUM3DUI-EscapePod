@@ -565,10 +565,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlarmLight
       objectReference: {fileID: 0}
-    - target: {fileID: 4502472403443297219, guid: d45241d77fcfd724297984d5f972563a, type: 3}
-      propertyPath: duration
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7145557737897594684, guid: d45241d77fcfd724297984d5f972563a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.548
@@ -1290,6 +1286,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 79df681521c029b4f8b1acb7b5a42720, type: 3}
   m_PrefabInstance: {fileID: 2135106886}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1589910913343993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4535337761320185949, guid: 501a2c1e282e05049a3e0dbe8268146f, type: 3}
+  m_PrefabInstance: {fileID: 10743347292821149}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &10743347292821149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1301,6 +1302,22 @@ PrefabInstance:
     - target: {fileID: 879456072143464886, guid: 501a2c1e282e05049a3e0dbe8268146f, type: 3}
       propertyPath: m_Name
       value: OxygenStorage
+      objectReference: {fileID: 0}
+    - target: {fileID: 5244263811744287366, guid: 501a2c1e282e05049a3e0dbe8268146f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f113ab3d815f55c48af359829946b403, type: 2}
+    - target: {fileID: 5367538670409741049, guid: 501a2c1e282e05049a3e0dbe8268146f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6147136013432610869, guid: 501a2c1e282e05049a3e0dbe8268146f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f113ab3d815f55c48af359829946b403, type: 2}
+    - target: {fileID: 6337987989522405450, guid: 501a2c1e282e05049a3e0dbe8268146f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7378187343288833699, guid: 501a2c1e282e05049a3e0dbe8268146f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1345,8 +1362,24 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4535337761320185949, guid: 501a2c1e282e05049a3e0dbe8268146f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 33610267686647976}
   m_SourcePrefab: {fileID: 100100000, guid: 501a2c1e282e05049a3e0dbe8268146f, type: 3}
+--- !u!114 &33610267686647976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589910913343993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f5f21ce2af276459559fdc2f47729c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 0}
 --- !u!4 &1909829966169669841 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4940770166406146367, guid: a26aca7a4b080384683201d74049fdb0, type: 3}

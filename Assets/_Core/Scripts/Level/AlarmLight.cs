@@ -23,14 +23,6 @@ namespace _Core.Scripts.Level
             _alarmSound = GetComponent<AudioSource>();
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                SetAlarmLightState(!_isActive);
-            }
-        }
-
         private void LoopAlarmLightIntensity()
         {
             if (!_isActive)

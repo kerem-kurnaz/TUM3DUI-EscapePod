@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minMaxIntensity: {x: 0, y: 3}
-  duration: 0.3
+  duration: 0.5
   ease: 6
 --- !u!82 &3613749752730439723
 AudioSource:

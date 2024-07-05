@@ -39,6 +39,9 @@ namespace _Core.Scripts.SelectionAndManipulation
         private void OnDisable()
         {
             highlightMaterial.color = _defaultHighlightColor;
+            _movable.OnStartMoving -= SetIsBeingMovedTrue;
+            _movable.OnStopMoving -= SetIsBeingMovedFalse;
+            _movable.OnStopMoving -= SetMaterialToDefault;
         }
 
         public void Select()

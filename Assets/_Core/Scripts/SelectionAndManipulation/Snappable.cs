@@ -16,6 +16,10 @@ namespace _Core.Scripts.SelectionAndManipulation
         {
             snapper = transform.parent.parent;
             snapperParent = snapper.parent;
+            if (snapperParent == null)
+            {
+                snapperParent = snapper;
+            }
             _renderer = snapper.GetComponent<Renderer>();
         }
 

@@ -24,7 +24,7 @@ namespace _Core.Scripts.Utility
 
         private void StartBlinking()
         {
-            StartCoroutine(BlinkRoutine());
+            //StartCoroutine(BlinkRoutine());
         }
 
         private IEnumerator BlinkRoutine()

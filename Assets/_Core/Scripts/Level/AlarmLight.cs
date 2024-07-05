@@ -70,7 +70,7 @@ namespace _Core.Scripts.Level
 
         private void SetAlarmLightStateTrue()
         {
-            SetAlarmLightState(true);
+            //SetAlarmLightState(true);
         }
 
         private void SlowlyIncreaseLowPassFilter()

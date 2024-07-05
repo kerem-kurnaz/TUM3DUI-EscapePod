@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f0820fc-deaa-408d-95bd-2db7f3d8067f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/Level/Indicator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/Level/Indicator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/Utility/HelperFunctions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/Utility/HelperFunctions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TUM_3DUI_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TUM_3DUI_Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Graphics/WorldFabs/AlarmLight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Graphics/WorldFabs/AlarmLight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scenes/IdilSceneKerem.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scenes/IdilSceneKerem.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +19,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Core/Graphics/ExternalAssets/SpaceSkies Free/Demo/Scripts/SkyboxChanger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Core/Scripts/Level/AlarmLight.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Core/Scripts/Level/CrateOpener.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Core/Scripts/Level/TurnIndicator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Core/Scripts/Utility/Utility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Core/Scripts/Level/Indicator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Core/Scripts/Utility/HelperFunctions.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -115,7 +115,7 @@
       <workItem from="1720028260646" duration="544000" />
       <workItem from="1720028833517" duration="21753000" />
       <workItem from="1720099829604" duration="20216000" />
-      <workItem from="1720181692745" duration="2095000" />
+      <workItem from="1720181692745" duration="3555000" />
     </task>
     <servers />
   </component>

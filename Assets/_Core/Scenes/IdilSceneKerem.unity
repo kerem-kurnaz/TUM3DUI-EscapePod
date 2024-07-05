@@ -734,18 +734,6 @@ PrefabInstance:
       value: AlarmLight
       objectReference: {fileID: 0}
     - target: {fileID: 7145557737897594684, guid: d45241d77fcfd724297984d5f972563a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.023038154
-      objectReference: {fileID: 0}
-    - target: {fileID: 7145557737897594684, guid: d45241d77fcfd724297984d5f972563a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.023038154
-      objectReference: {fileID: 0}
-    - target: {fileID: 7145557737897594684, guid: d45241d77fcfd724297984d5f972563a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.02303816
-      objectReference: {fileID: 0}
-    - target: {fileID: 7145557737897594684, guid: d45241d77fcfd724297984d5f972563a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.548
       objectReference: {fileID: 0}
@@ -784,18 +772,6 @@ PrefabInstance:
     - target: {fileID: 7145557737897594684, guid: d45241d77fcfd724297984d5f972563a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -20.015
-      objectReference: {fileID: 0}
-    - target: {fileID: 8251612431335371462, guid: d45241d77fcfd724297984d5f972563a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 8251612431335371462, guid: d45241d77fcfd724297984d5f972563a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 8251612431335371462, guid: d45241d77fcfd724297984d5f972563a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

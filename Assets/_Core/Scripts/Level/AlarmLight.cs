@@ -15,10 +15,20 @@ namespace _Core.Scripts.Level
         private Light _light;
         private bool _isActive = false;
         private bool _increasing = true; 
+        private AudioSource _alarmSound;
 
         private void Awake()
         {
             _light = GetComponentInChildren<Light>();
+            _alarmSound = GetComponent<AudioSource>();
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                SetAlarmLightState(!_isActive);
+            }
         }
 
         private void LoopAlarmLightIntensity()
@@ -43,6 +53,14 @@ namespace _Core.Scripts.Level
         {
             _isActive = isActive;
             LoopAlarmLightIntensity();
+            if (_isActive)
+            {
+                _alarmSound.Play();
+            }
+            else
+            {
+                _alarmSound.Stop();
+            }
         }
     }
 }

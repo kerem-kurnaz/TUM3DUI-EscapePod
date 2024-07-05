@@ -7,7 +7,9 @@
     <list default="true" id="3f0820fc-deaa-408d-95bd-2db7f3d8067f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TUM_3DUI_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TUM_3DUI_Project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Core/Graphics/WorldFabs/AlarmLight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Graphics/WorldFabs/AlarmLight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Materials/ActiveCube.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Materials/ActiveCube.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Core/Scenes/IdilSceneKerem.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scenes/IdilSceneKerem.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/Level/AlarmLight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/Level/AlarmLight.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +117,7 @@
       <workItem from="1720028260646" duration="544000" />
       <workItem from="1720028833517" duration="21753000" />
       <workItem from="1720099829604" duration="20216000" />
-      <workItem from="1720181692745" duration="3555000" />
+      <workItem from="1720181692745" duration="4298000" />
     </task>
     <servers />
   </component>

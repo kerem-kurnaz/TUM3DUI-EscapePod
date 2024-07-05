@@ -1,3 +1,5 @@
+using System;
+using _Core.Scripts.SelectionAndManipulation;
 using DG.Tweening;
 using UnityEngine;
 
@@ -9,6 +11,31 @@ namespace _Core.Scripts.Level
         
         [SerializeField] private float duration = 1.0f; 
         [SerializeField] private Ease rotationEase = Ease.OutQuad;
+        
+        private Pressable _pressable;
+        
+        private void Start()
+        {
+            _pressable = GetComponentInChildren<Pressable>();
+            _pressable.OnPress += OpenCloseCrate;
+        }
+
+        private void OnDisable()
+        {
+            _pressable.OnPress -= OpenCloseCrate;
+        }
+
+        private void OpenCloseCrate(bool isActive)
+        {
+            if (isActive)
+            {
+                OpenCrate();
+            }
+            else
+            {
+                CloseCrate();
+            }
+        }
 
         private void OpenCrate()
         {

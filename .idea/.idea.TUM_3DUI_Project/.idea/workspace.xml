@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f0820fc-deaa-408d-95bd-2db7f3d8067f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Core/Prefabs/LevelObjects/Pixel_box_04.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Core/Prefabs/LevelObjects/Pixel_box_04.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/Level.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/Level/CrateOpener.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/Level/CrateOpener.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TUM_3DUI_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TUM_3DUI_Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Graphics/ExternalAssets/Pixel Boxes - lowpoly/Prefabs/Pixel_box_04.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Graphics/ExternalAssets/Pixel Boxes - lowpoly/Prefabs/Pixel_box_04.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Materials/ActiveCube.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Materials/ActiveCube.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/LevelObjects/Pixel_box_04.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Prefabs/LevelObjects/Pixel_box_04.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Core/Scenes/IdilSceneKerem.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scenes/IdilSceneKerem.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/Level/CrateOpener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/Level/CrateOpener.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +112,8 @@
       <workItem from="1718815112830" duration="3955000" />
       <workItem from="1720028260646" duration="544000" />
       <workItem from="1720028833517" duration="21753000" />
-      <workItem from="1720099829604" duration="19996000" />
+      <workItem from="1720099829604" duration="20216000" />
+      <workItem from="1720181692745" duration="476000" />
     </task>
     <servers />
   </component>

@@ -7,7 +7,7 @@ namespace _Core.Scripts.SelectionAndManipulation
     public class Snapper : MonoBehaviour
     {
         [SerializeField] private Transform snapperObject;
-        
+        [SerializeField] private SnapType snapperType;
         private Snappable _currentSnappable;
         private GameObject _snapHighlight;
 
@@ -32,6 +32,8 @@ namespace _Core.Scripts.SelectionAndManipulation
             var snappable = other.GetComponentInChildren<Snappable>();
             if (snappable != null)
             {
+                if (snapperType != snappable.SnappableType) return;
+                
                 _currentSnappable = snappable;
                 _currentSnappable.GetTargetToSnap().GetComponentInChildren<Movable>().OnMoveInputUp += SnapObject;
                 CreateHighlightClone(_currentSnappable.GetTargetToSnap().gameObject);

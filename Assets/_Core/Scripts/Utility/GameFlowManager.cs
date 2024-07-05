@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace _Core.Scripts.Utility
@@ -51,7 +52,10 @@ namespace _Core.Scripts.Utility
         }
         
         #endregion
-        
-        
+
+        private void Start()
+        {
+            
+        }
     }
 }

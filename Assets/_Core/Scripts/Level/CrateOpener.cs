@@ -13,10 +13,14 @@ namespace _Core.Scripts.Level
         [SerializeField] private Ease rotationEase = Ease.OutQuad;
         
         private Pressable _pressable;
-        
-        private void Start()
+
+        private void Awake()
         {
             _pressable = GetComponentInChildren<Pressable>();
+        }
+
+        private void Start()
+        {
             _pressable.OnPress += OpenCloseCrate;
         }
 

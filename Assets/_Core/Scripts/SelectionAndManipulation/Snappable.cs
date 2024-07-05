@@ -1,11 +1,14 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Core.Scripts.SelectionAndManipulation
 {
     public class Snappable : MonoBehaviour
     {
+        public SnapType SnappableType => snappableType;
         [SerializeField] private Transform targetToSnap;
+        [FormerlySerializedAs("snapType")] [SerializeField] private SnapType snappableType;
 
         private void Awake()
         {
@@ -22,4 +25,9 @@ namespace _Core.Scripts.SelectionAndManipulation
             return targetToSnap;
         }
     }
+}
+
+public enum SnapType
+{
+    OxygenTank,
 }

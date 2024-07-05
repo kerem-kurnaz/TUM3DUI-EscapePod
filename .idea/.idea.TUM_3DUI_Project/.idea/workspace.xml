@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f0820fc-deaa-408d-95bd-2db7f3d8067f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Core/Prefabs/LevelObjects/SelectableOxygenTank.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Core/Prefabs/LevelObjects/SelectableOxygenTank.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TUM_3DUI_Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TUM_3DUI_Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Graphics/WorldFabs/OxygenTankHolder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Graphics/WorldFabs/OxygenTankHolder.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Core/Materials/ActiveCube.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Materials/ActiveCube.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Core/Prefabs/LevelObjects/ScifiOxygenTank (1) Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Prefabs/LevelObjects/ScifiOxygenTank (1) Variant.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Core/Scenes/IdilSceneKerem.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scenes/IdilSceneKerem.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/Snappable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/Snappable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/Snapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Core/Scripts/SelectionAndManipulation/Snapper.cs" afterDir="false" />
@@ -124,7 +124,7 @@
       <workItem from="1720028260646" duration="544000" />
       <workItem from="1720028833517" duration="21753000" />
       <workItem from="1720099829604" duration="20216000" />
-      <workItem from="1720181692745" duration="12965000" />
+      <workItem from="1720181692745" duration="15502000" />
     </task>
     <servers />
   </component>

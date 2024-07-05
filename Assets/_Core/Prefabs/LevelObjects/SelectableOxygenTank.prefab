@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &474729481137459084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4256038480200464035}
+  m_Layer: 0
+  m_Name: SelectableOxygenTank
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4256038480200464035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474729481137459084}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4430068524526660746}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2964334015780681532
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4256038480200464035}
+    m_Modifications:
+    - target: {fileID: 1466394250088946614, guid: bbd84bf49e1a5c34d862e5ef44d0eff3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1774229
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466394250088946614, guid: bbd84bf49e1a5c34d862e5ef44d0eff3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -1.1774223
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466394250088946614, guid: bbd84bf49e1a5c34d862e5ef44d0eff3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1774231
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466394250088946614, guid: bbd84bf49e1a5c34d862e5ef44d0eff3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466394250088946614, guid: bbd84bf49e1a5c34d862e5ef44d0eff3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466394250088946614, guid: bbd84bf49e1a5c34d862e5ef44d0eff3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466394250088946614, guid: bbd84bf49e1a5c34d862e5ef44d0eff3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466394250088946614, guid: bbd84bf49e1a5c34d862e5ef44d0eff3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466394250088946614, guid: bbd84bf49e1a5c34d862e5ef44d0eff3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466394250088946614, guid: bbd84bf49e1a5c34d862e5ef44d0eff3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466394250088946614, guid: bbd84bf49e1a5c34d862e5ef44d0eff3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466394250088946614, guid: bbd84bf49e1a5c34d862e5ef44d0eff3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466394250088946614, guid: bbd84bf49e1a5c34d862e5ef44d0eff3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238989822528733452, guid: bbd84bf49e1a5c34d862e5ef44d0eff3, type: 3}
+      propertyPath: m_Name
+      value: ScifiOxygenTank (1) Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bbd84bf49e1a5c34d862e5ef44d0eff3, type: 3}
+--- !u!4 &4430068524526660746 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1466394250088946614, guid: bbd84bf49e1a5c34d862e5ef44d0eff3, type: 3}
+  m_PrefabInstance: {fileID: 2964334015780681532}
+  m_PrefabAsset: {fileID: 0}

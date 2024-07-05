@@ -7,27 +7,33 @@ namespace _Core.Scripts.SelectionAndManipulation
     public class Snappable : MonoBehaviour
     {
         public SnapType SnappableType => snappableType;
-        [SerializeField] private Transform targetToSnap;
-        [FormerlySerializedAs("snapType")] [SerializeField] private SnapType snappableType;
+        [SerializeField] private Transform snapper;
+        [SerializeField] private Transform snapperParent;
+        [SerializeField] private SnapType snappableType;
         private Renderer _renderer;
 
         private void Awake()
         {
-            targetToSnap = transform.parent.parent;
-            _renderer = targetToSnap.GetComponent<Renderer>();
+            snapper = transform.parent.parent;
+            snapperParent = snapper.parent;
+            _renderer = snapper.GetComponent<Renderer>();
         }
 
         public void SnapToPosition(Vector3 snapPosition)
         {
             var offset = snapPosition - _renderer.bounds.center;
-            targetToSnap.position += offset;
-            //targetToSnap.position = snapPosition;
-            targetToSnap.rotation = Quaternion.identity;
+            snapperParent.position += offset;
+            snapperParent.rotation = Quaternion.identity;
         }
         
-        public Transform GetTargetToSnap()
+        public Transform GetSnapperTransform()
         {
-            return targetToSnap;
+            return snapper;
+        }
+        
+        public Transform GetSnapperParentTransform()
+        {
+            return snapperParent;
         }
         
         public Vector3 GetCenter()

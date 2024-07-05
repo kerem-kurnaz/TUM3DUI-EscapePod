@@ -7,7 +7,6 @@ namespace _Core.Scripts.SelectionAndManipulation
     public class Snapper : MonoBehaviour
     {
         [SerializeField] private Transform snapperObject;
-        [SerializeField] private Transform snappingPosition;
         [SerializeField] private SnapType snapperType;
         private Snappable _currentSnappable;
         private GameObject _snapHighlight;
@@ -26,7 +25,7 @@ namespace _Core.Scripts.SelectionAndManipulation
         {
             if (_currentSnappable != null)
             {
-                _currentSnappable.GetTargetToSnap().GetComponentInChildren<Movable>().OnMoveInputUp -= SnapObject;
+                _currentSnappable.GetSnapperTransform().GetComponentInChildren<Movable>().OnMoveInputUp -= SnapObject;
             }
         }
 
@@ -38,9 +37,9 @@ namespace _Core.Scripts.SelectionAndManipulation
                 if (snapperType != snappable.SnappableType) return;
                 
                 _currentSnappable = snappable;
-                _currentSnappable.GetTargetToSnap().GetComponentInChildren<Movable>().OnMoveInputUp += SnapObject;
-                _currentSnappable.GetTargetToSnap().GetComponentInChildren<Movable>().OnStartMoving += SetIsSnappedFalse;
-                CreateHighlightClone(_currentSnappable.GetTargetToSnap().gameObject);
+                _currentSnappable.GetSnapperTransform().GetComponentInChildren<Movable>().OnMoveInputUp += SnapObject;
+                _currentSnappable.GetSnapperTransform().GetComponentInChildren<Movable>().OnStartMoving += SetIsSnappedFalse;
+                CreateHighlightClone(_currentSnappable.GetSnapperParentTransform().gameObject);
             }
         }
 
@@ -49,8 +48,8 @@ namespace _Core.Scripts.SelectionAndManipulation
             var snappable = other.GetComponentInChildren<Snappable>();
             if (snappable != null && snappable == _currentSnappable)
             {
-                _currentSnappable.GetTargetToSnap().GetComponentInChildren<Movable>().OnMoveInputUp -= SnapObject;
-                _currentSnappable.GetTargetToSnap().GetComponentInChildren<Movable>().OnStartMoving -= SetIsSnappedFalse;
+                _currentSnappable.GetSnapperTransform().GetComponentInChildren<Movable>().OnMoveInputUp -= SnapObject;
+                _currentSnappable.GetSnapperTransform().GetComponentInChildren<Movable>().OnStartMoving -= SetIsSnappedFalse;
                 _currentSnappable = null;
                 DestroyHighlightClone();
             }

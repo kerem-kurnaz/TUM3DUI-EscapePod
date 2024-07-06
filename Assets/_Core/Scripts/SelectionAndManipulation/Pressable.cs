@@ -68,7 +68,6 @@ namespace _Core.Scripts.SelectionAndManipulation
             OnPress?.Invoke(_isActive);
 
             if (!_moveOnPress) return;
-            
             var originalPosition = _pressableTransform.localPosition;
             var pressedPosition = originalPosition + pressMoveVector * pressMoveFactor;
 

@@ -2913,6 +2913,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a26aca7a4b080384683201d74049fdb0, type: 3}
+--- !u!4 &2638763020855500488 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8164453521201568220, guid: a491e7ced2ec62f41aae1f1604cb6efa, type: 3}
+  m_PrefabInstance: {fileID: 8521589067403399743}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4227807133741618953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3260,6 +3265,10 @@ PrefabInstance:
       propertyPath: craneArmTransform
       value: 
       objectReference: {fileID: 769221371}
+    - target: {fileID: 4661368406773742784, guid: a491e7ced2ec62f41aae1f1604cb6efa, type: 3}
+      propertyPath: joystickArmTransform
+      value: 
+      objectReference: {fileID: 2638763020855500488}
     - target: {fileID: 8279497413910668289, guid: a491e7ced2ec62f41aae1f1604cb6efa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.551

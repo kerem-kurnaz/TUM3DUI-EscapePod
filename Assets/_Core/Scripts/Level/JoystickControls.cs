@@ -8,6 +8,7 @@ namespace _Core.Scripts.Level
     public class JoystickControls : MonoBehaviour
     {
         [SerializeField] private Transform craneArmTransform;
+        [SerializeField] private Transform joystickArmTransform;
         private Pressable _pressable;
         private bool _isJoystickActive = false;
 
@@ -35,10 +36,12 @@ namespace _Core.Scripts.Level
                 if (isTowardsLeft)
                 {
                     HelperFunctions.RotateObjectZ(craneArmTransform, -90f);
+                    RotateJoystickArm(-30f);
                 }
                 else
                 {
                     HelperFunctions.RotateObjectZ(craneArmTransform, 90f);
+                    RotateJoystickArm(30f);
                 }
             }
         }
@@ -46,6 +49,11 @@ namespace _Core.Scripts.Level
         private void StartJoystickControls(bool isActive)
         {
             _isJoystickActive = isActive;
+        }
+        
+        private void RotateJoystickArm(float rotationAngle)
+        {
+            joystickArmTransform.transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
         }
     }
 }

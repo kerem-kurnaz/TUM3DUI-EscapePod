@@ -39,8 +39,13 @@ namespace _Core.Scripts.SelectionAndManipulation
                 if (snapperType != snappable.SnappableType) return;
                 
                 _currentSnappable = snappable;
-                _currentSnappable.GetSnapperTransform().GetComponentInChildren<Movable>().OnMoveInputUp += SnapObject;
-                _currentSnappable.GetSnapperTransform().GetComponentInChildren<Movable>().OnStartMoving += SetIsSnappedFalse;
+                if (!snappable._inSnappingRange)
+                {
+                    snappable.SetSnappingRange(true);
+                    _currentSnappable.GetSnapperTransform().GetComponentInChildren<Movable>().OnMoveInputUp += SnapObject;
+                    _currentSnappable.GetSnapperTransform().GetComponentInChildren<Movable>().OnStartMoving += SetIsSnappedFalse;
+                }
+                
                 CreateHighlightClone(_currentSnappable.GetSnapperParentTransform().gameObject);
             }
         }
@@ -52,6 +57,7 @@ namespace _Core.Scripts.SelectionAndManipulation
             {
                 _currentSnappable.GetSnapperTransform().GetComponentInChildren<Movable>().OnMoveInputUp -= SnapObject;
                 _currentSnappable.GetSnapperTransform().GetComponentInChildren<Movable>().OnStartMoving -= SetIsSnappedFalse;
+                snappable.SetSnappingRange(false);
                 _currentSnappable = null;
                 DestroyHighlightClone();
             }
@@ -59,12 +65,12 @@ namespace _Core.Scripts.SelectionAndManipulation
         
         public void SnapObject()
         {
-            if (_currentSnappable != null)
+            if (_currentSnappable != null && !_isSnapped)
             {
                 _isSnapped = true;
                 DestroyHighlightClone();
-                _currentSnappable.SnapToPosition(GetSnapPosition(snapperObject));
                 OnSnap?.Invoke();
+                _currentSnappable.SnapToPosition(GetSnapPosition(snapperObject));
             }
         }
 

@@ -12,7 +12,7 @@ namespace _Core.Scripts.SelectionAndManipulation
         [SerializeField] private SnapType snappableType;
         private Renderer _renderer;
         
-        //public bool _inSnappingRange { get; private set; } = false;
+        public bool _inSnappingRange { get; private set; } = false;
 
         private void Awake()
         {
@@ -27,9 +27,12 @@ namespace _Core.Scripts.SelectionAndManipulation
 
         public void SnapToPosition(Vector3 snapPosition)
         {
-            var offset = snapPosition - _renderer.bounds.center;
-            snapperParent.position += offset;
-            snapperParent.rotation = Quaternion.identity;
+            for (int i = 0; i < 2; i++)//weird fix idk
+            {
+                var offset = snapPosition - _renderer.bounds.center;
+                snapperParent.position += offset;
+                snapperParent.rotation = Quaternion.identity;
+            }
         }
         
         public Transform GetSnapperTransform()
@@ -45,6 +48,11 @@ namespace _Core.Scripts.SelectionAndManipulation
         public Vector3 GetCenter()
         {
             return _renderer.bounds.center;
+        }
+        
+        public void SetSnappingRange(bool inSnappingRange)
+        {
+            _inSnappingRange = inSnappingRange;
         }
     }
 }

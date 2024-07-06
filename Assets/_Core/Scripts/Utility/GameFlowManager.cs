@@ -59,6 +59,7 @@ namespace _Core.Scripts.Utility
         public static Action OnStartGame;
         public static Action OnOxygenGameEnd;
 
+        private int _oxygenTankCount = 0;
         private void Start()
         {
             StartCoroutine(StartGame());
@@ -77,6 +78,15 @@ namespace _Core.Scripts.Utility
             yield return new WaitForSeconds(3f);
             
             OnStartGame?.Invoke();
+        }
+
+        public void InsertOxygenTank()
+        {
+            _oxygenTankCount++;
+            if (_oxygenTankCount >= 2)
+            {
+                OnOxygenGameEnd?.Invoke();
+            }
         }
     }
 }

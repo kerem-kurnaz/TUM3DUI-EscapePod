@@ -19,11 +19,11 @@ namespace _Core.Scripts.Utility
                 var isTowardsLeft = IsForwardTowardsRight(GameManager.Instance.Selector.GetSelectorStartPoint(), transform);
                 if (isTowardsLeft)
                 {
-                    RotateObjectY(transform, -90f);
+                    HelperFunctions.RotateObjectY(transform, -90f);
                 }
                 else
                 {
-                    RotateObjectY(transform, 90f);
+                    HelperFunctions.RotateObjectY(transform, 90f);
                 }
             }
 
@@ -32,11 +32,11 @@ namespace _Core.Scripts.Utility
                 var isTowardsUp = IsForwardTowardsUp(GameManager.Instance.Selector.GetSelectorStartPoint(), transform);
                 if (isTowardsUp)
                 {
-                    RotateObjectX(transform, 90f);
+                    HelperFunctions.RotateObjectX(transform, 90f);
                 }
                 else
                 {
-                    RotateObjectX(transform, -90f);
+                    HelperFunctions.RotateObjectX(transform, -90f);
                 }
             }
 
@@ -65,23 +65,7 @@ namespace _Core.Scripts.Utility
             return dotProduct > 0;
         }
 
-        private static void RotateObjectY(Transform t, float rotationSpeed)
-        {
-            var rotationAmount = rotationSpeed * Time.deltaTime;
-            t.Rotate(0, rotationAmount, 0);
-        }
         
-        private static void RotateObjectX(Transform t, float rotationSpeed)
-        {
-            var rotationAmount = rotationSpeed * Time.deltaTime;
-            t.Rotate(rotationAmount, 0, 0);
-        }
-        
-        private static void RotateObjectZ(Transform t, float rotationSpeed)
-        {
-            var rotationAmount = rotationSpeed * Time.deltaTime;
-            t.Rotate(0, 0, rotationAmount);
-        }
         
         void RotateTowardsTargetDirection(Vector3 targetDirection, float rotationSpeed)
         {

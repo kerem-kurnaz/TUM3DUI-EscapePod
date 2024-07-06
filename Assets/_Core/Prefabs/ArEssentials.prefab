@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 125276274781618150}
+  - component: {fileID: 2342077873052194659}
   m_Layer: 0
   m_Name: ArEssentials
   m_TagString: Untagged
@@ -35,6 +36,19 @@ Transform:
   - {fileID: 701939176554093384}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2342077873052194659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844695096494140367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f6513f4fbc3ab42ad48b39cf3fb029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arEssentialsTransform: {fileID: 0}
 --- !u!1 &2928078957296642600
 GameObject:
   m_ObjectHideFlags: 0

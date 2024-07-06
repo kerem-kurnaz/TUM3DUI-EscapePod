@@ -1,9 +1,8 @@
 using System;
 using _Core.Scripts.SelectionAndManipulation;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace _Core.Scripts
+namespace _Core.Scripts.Utility
 {
     public class GameManager : MonoBehaviour
     {

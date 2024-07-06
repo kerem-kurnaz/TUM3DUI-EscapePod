@@ -97,6 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4940770166406146367}
   - component: {fileID: 3606553168548246445}
+  - component: {fileID: 4462676996963603291}
   m_Layer: 0
   m_Name: Crate
   m_TagString: Untagged
@@ -134,9 +135,107 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6df0c60e44f36a4ea3fdc54e3f6a1ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openSound: {fileID: 8300000, guid: 91d81fee269e1d74eb2fd6c8c0aeea68, type: 3}
+  closeSound: {fileID: 8300000, guid: 7aa2fc1bb2ba2614dbd2b50d860dbca9, type: 3}
   crateHead: {fileID: 363339689222176975}
   duration: 1
   rotationEase: 6
+--- !u!82 &4462676996963603291
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686848895056023953}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2430174277691754535
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +403,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4940770166406146367}
     m_Modifications:
+    - target: {fileID: 2440253308505023874, guid: 8290c40e0f7f7604ea4ca393386603d4, type: 3}
+      propertyPath: highlightMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: f94c560bae7b6ab4ca5029506f6b6420, type: 2}
     - target: {fileID: 7799606304131939486, guid: 8290c40e0f7f7604ea4ca393386603d4, type: 3}
       propertyPath: m_Name
       value: PressableCube

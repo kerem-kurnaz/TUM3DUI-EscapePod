@@ -1,4 +1,5 @@
 using System;
+using _Core.Scripts.Utility;
 using DG.Tweening;
 using UnityEngine;
 
@@ -15,6 +16,12 @@ namespace _Core.Scripts.Level
         {
             _rend = GetComponent<Renderer>();
             _originalColor = _rend.materials[0].GetColor("_EmissionColor");
+        }
+
+        private void Start()
+        {
+            GameFlowManager.OnStartGame += LoopHighlightColor;
+            GameFlowManager.OnOxygenGameEnd += StopHighlightColor;
         }
 
         private void LoopHighlightColor()

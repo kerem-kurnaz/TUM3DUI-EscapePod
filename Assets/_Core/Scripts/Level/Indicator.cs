@@ -12,15 +12,27 @@ namespace _Core.Scripts.Level
         
         [SerializeField] private Vector2 minMaxRotation = new Vector2(-150, -25);
         [SerializeField] private Ease rotationEase = Ease.OutQuad;
+        
+        [SerializeField] private bool cantChange = false;
 
         private void Awake()
         {
-            TurnIndicator(startOxygenLevel, 0.1f);
+            InitializeIndicator(startOxygenLevel, 0.1f);
         }
 
-        private void TurnIndicator(float targetValue, float duration)
+        public void TurnIndicator(float targetValue, float duration)
         {
-            var targetZValueInRotation = HelperFunctions.MapValue(targetValue, minMaxRotation.x, minMaxRotation.y, 0f, 1f);
+            if (cantChange) return;
+            
+            var targetZValueInRotation = HelperFunctions.PercentageInRange(targetValue, minMaxRotation.x, minMaxRotation.y);
+            var targetValueInRotation = new Vector3(0, 0, targetZValueInRotation);
+            
+            transform.DOLocalRotate(targetValueInRotation, duration).SetEase(rotationEase);
+        }
+
+        private void InitializeIndicator(float targetValue, float duration)
+        {
+            var targetZValueInRotation = HelperFunctions.PercentageInRange(targetValue, minMaxRotation.x, minMaxRotation.y);
             var targetValueInRotation = new Vector3(0, 0, targetZValueInRotation);
             
             transform.DOLocalRotate(targetValueInRotation, duration).SetEase(rotationEase);

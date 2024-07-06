@@ -57,6 +57,7 @@ namespace _Core.Scripts.Utility
 
         public static Action OnBeforeStartGame;
         public static Action OnStartGame;
+        public static Action OnOxygenGameEnd;
 
         private void Start()
         {

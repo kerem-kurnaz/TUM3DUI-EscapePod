@@ -7,5 +7,10 @@ namespace _Core.Scripts.Utility
         {
             return targetMin + (x - sourceMin) * (targetMax - targetMin) / (sourceMax - sourceMin);
         }
+        
+        public static float PercentageInRange(float percentage, float sourceMin, float sourceMax)
+        {
+            return sourceMin + percentage * (sourceMax - sourceMin);
+        }
     }
 }

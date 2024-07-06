@@ -69,6 +69,7 @@ namespace _Core.Scripts.Utility
         {
             OnBeforeStartGame = null;
             OnStartGame = null;
+            OnOxygenGameEnd = null;
         }
 
         private IEnumerator StartGame()

@@ -27,12 +27,9 @@ namespace _Core.Scripts.Level
 
         private void Start()
         {
-            GameFlowManager.OnStartGame += SetAlarmLightStateTrue;
-        }
-
-        private void OnDisable()
-        {
-            GameFlowManager.OnStartGame -= SetAlarmLightStateTrue;
+            _alarmSound.Play();
+            GameFlowManager.OnStartGame += () => SetAlarmLightState(true);
+            GameFlowManager.OnOxygenGameEnd += () => SetAlarmLightState(false);
         }
 
         private void LoopAlarmLightIntensity()
@@ -59,18 +56,12 @@ namespace _Core.Scripts.Level
             LoopAlarmLightIntensity();
             if (_isActive)
             {
-                _alarmSound.Play();
                 SlowlyIncreaseLowPassFilter();
             }
             else
             {
                 _alarmSound.Stop();
             }
-        }
-
-        private void SetAlarmLightStateTrue()
-        {
-            //SetAlarmLightState(true);
         }
 
         private void SlowlyIncreaseLowPassFilter()

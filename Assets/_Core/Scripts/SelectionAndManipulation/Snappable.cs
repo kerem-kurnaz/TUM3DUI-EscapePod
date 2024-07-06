@@ -11,6 +11,8 @@ namespace _Core.Scripts.SelectionAndManipulation
         [SerializeField] private Transform snapperParent;
         [SerializeField] private SnapType snappableType;
         private Renderer _renderer;
+        
+        //public bool _inSnappingRange { get; private set; } = false;
 
         private void Awake()
         {

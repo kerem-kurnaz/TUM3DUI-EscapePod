@@ -34,7 +34,7 @@ namespace _Core.Scripts.SelectionAndManipulation
         private void OnTriggerStay(Collider other)
         {
             var snappable = other.GetComponentInChildren<Snappable>();
-            if (snappable != null)
+            if (snappable != null && !_isSnapped)
             {
                 if (snapperType != snappable.SnappableType) return;
                 

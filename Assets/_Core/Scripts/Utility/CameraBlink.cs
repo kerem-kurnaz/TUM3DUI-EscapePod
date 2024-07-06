@@ -29,17 +29,26 @@ namespace _Core.Scripts.Utility
 
         private IEnumerator BlinkRoutine()
         {
-            for (var i = 0; i < blinkCount; i++)
-            {
-                // Fade to black (close eyelids)
-                yield return StartCoroutine(FadeImage(1.0f, blinkDuration * 0.7f));
-
-                // Fade to transparent (open eyelids)
-                yield return StartCoroutine(FadeImage(0.0f, blinkDuration * 0.3f));
-
-                // Wait for a moment before the next blink
-                yield return new WaitForSeconds(delayBetweenBlinks);
-            }
+            yield return new WaitForSeconds(delayBetweenBlinks);
+            yield return StartCoroutine(FadeImage(0.0f, 1f));
+            yield return StartCoroutine(FadeImage(1.0f, .2f));
+            yield return new WaitForSeconds(delayBetweenBlinks);
+            yield return StartCoroutine(FadeImage(0.0f, 0.6f));
+            yield return StartCoroutine(FadeImage(1.0f, .3f));
+            yield return new WaitForSeconds(delayBetweenBlinks);
+            yield return StartCoroutine(FadeImage(0.0f, .3f));
+            
+            // for (var i = 0; i < blinkCount; i++)
+            // {
+            //     // Fade to black (close eyelids)
+            //     yield return StartCoroutine(FadeImage(1.0f, blinkDuration * 0.7f));
+            //
+            //     // Fade to transparent (open eyelids)
+            //     yield return StartCoroutine(FadeImage(0.0f, blinkDuration * 0.3f));
+            //
+            //     // Wait for a moment before the next blink
+            //     yield return new WaitForSeconds(delayBetweenBlinks);
+            // }
         }
 
         private IEnumerator FadeImage(float targetAlpha, float duration)

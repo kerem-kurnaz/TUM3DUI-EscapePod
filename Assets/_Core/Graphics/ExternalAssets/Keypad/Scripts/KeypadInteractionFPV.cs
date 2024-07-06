@@ -17,7 +17,7 @@ public class KeypadInteractionFPV : MonoBehaviour
             {
                 if (hit.collider.TryGetComponent(out KeypadButton keypadButton))
                 {
-                    keypadButton.PressButton();
+                    keypadButton.PressButton(true);
                 }
             }
         }

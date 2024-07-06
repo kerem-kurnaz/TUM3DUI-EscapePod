@@ -10,7 +10,7 @@ namespace _Core.Scripts.SelectionAndManipulation
         public Action<bool> OnPress;
         
         public Transform PressableTransform => _pressableTransform;
-        
+        [SerializeField] private Vector3 pressMoveVector = Vector3.down; // Vector to move the button when pressed
         [SerializeField] private float pressMoveFactor = 0.05f; // Scale factor when the button is pressed
         [SerializeField] private float pressDuration = 0.1f;    // Duration of the press animation
         [SerializeField] private float releaseDuration = 0.1f;  // Duration of the release animation
@@ -70,7 +70,7 @@ namespace _Core.Scripts.SelectionAndManipulation
             if (!_moveOnPress) return;
             
             var originalPosition = _pressableTransform.localPosition;
-            var pressedPosition = originalPosition + Vector3.down * pressMoveFactor;
+            var pressedPosition = originalPosition + pressMoveVector * pressMoveFactor;
 
             // Animate the move down (press effect)
             _pressableTransform.DOLocalMove(pressedPosition, pressDuration).SetEase(pressEase)

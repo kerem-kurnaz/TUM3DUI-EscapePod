@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using _Core.Scripts.SelectionAndManipulation;
 using UnityEngine;
 namespace NavKeypad
 {
@@ -14,16 +16,28 @@ namespace NavKeypad
         [Header("Component References")]
         [SerializeField] private Keypad keypad;
 
+        private Pressable _pressable;
+        private bool moving;
 
-        public void PressButton()
+        private void Awake()
         {
+            _pressable = GetComponentInChildren<Pressable>();
+        }
+
+        private void Start()
+        {
+            _pressable.OnPress += PressButton;
+        }
+
+        public void PressButton(bool isActive)
+        {
+            keypad.AddInput(value);
+
             if (!moving)
             {
-                keypad.AddInput(value);
-                StartCoroutine(MoveSmooth());
+                //StartCoroutine(MoveSmooth());
             }
         }
-        private bool moving;
 
         private IEnumerator MoveSmooth()
         {

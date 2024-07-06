@@ -172,13 +172,21 @@ MonoBehaviour:
 
     - Use the cube to look around
 
-    - Press E to interact
-    with highlighted objects
+    - Point at an object
+    to make it highlighted
 
-    - Hold E to move highlighted objects
+    - Press Space to interact with highlighted objects
 
-    - Hold
-    Q to rotate to your look direction'
+    -
+    Hold Space to move highlighted objects
+
+    - Hold Q or E to rotate to your look
+    direction (E Vertical, Q Horizontal)
+
+    - Press R to reset your look direction
+
+    -
+    Press Z to toggle zoom'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

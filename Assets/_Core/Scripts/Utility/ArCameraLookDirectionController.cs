@@ -1,9 +1,17 @@
+using System;
 using UnityEngine;
 
 namespace _Core.Scripts.Utility
 {
     public class ArCameraLookDirectionController : MonoBehaviour
     {
+        private Quaternion _initialRotation;
+
+        private void Awake()
+        {
+            _initialRotation = transform.rotation;
+        }
+
         private void Update()
         {
             if (Input.GetKey(KeyCode.Q))
@@ -30,6 +38,11 @@ namespace _Core.Scripts.Utility
                 {
                     RotateObjectX(transform, -90f);
                 }
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                transform.rotation = _initialRotation;
             }
         }
 

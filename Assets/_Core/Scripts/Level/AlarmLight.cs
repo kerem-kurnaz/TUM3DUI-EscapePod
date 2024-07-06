@@ -36,7 +36,8 @@ namespace _Core.Scripts.Level
         {
             if (!_isActive)
             {
-                _light.DOIntensity(minMaxIntensity.x, lightIncreaseDuration).SetEase(ease); 
+                _light.color = Color.white;
+                _light.DOIntensity(1f, lightIncreaseDuration).SetEase(ease); 
                 return; 
             }
 
@@ -61,6 +62,7 @@ namespace _Core.Scripts.Level
             else
             {
                 _alarmSound.Stop();
+                
             }
         }
 

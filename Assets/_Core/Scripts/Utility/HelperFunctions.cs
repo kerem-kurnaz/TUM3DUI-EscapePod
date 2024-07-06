@@ -32,5 +32,23 @@ namespace _Core.Scripts.Utility
             var rotationAmount = rotationSpeed * Time.deltaTime;
             t.Rotate(0, 0, rotationAmount);
         }
+        
+        public static bool IsForwardTowardsRight(Transform source, Transform target)
+        {
+            var targetRight = target.right;
+
+            var dotProduct = Vector3.Dot(source.forward, targetRight);
+
+            return dotProduct > 0;
+        }
+        
+        public static bool IsForwardTowardsUp(Transform source, Transform target)
+        {
+            var targetUp = target.up;
+
+            var dotProduct = Vector3.Dot(source.forward, targetUp);
+
+            return dotProduct > 0;
+        }
     }
 }

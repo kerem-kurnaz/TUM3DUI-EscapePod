@@ -411,6 +411,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressableCube
       objectReference: {fileID: 0}
+    - target: {fileID: 8005078671944681741, guid: 8290c40e0f7f7604ea4ca393386603d4, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8429248591849426143, guid: 8290c40e0f7f7604ea4ca393386603d4, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.22797745

@@ -21,6 +21,7 @@ namespace _Core.Scripts.SelectionAndManipulation
         private Transform _pressableTransform;
         private bool _readyToPress = false;
         private bool _isActive = false;
+        private bool _moveOnPress = true;
         
         private void Awake()
         {
@@ -65,6 +66,8 @@ namespace _Core.Scripts.SelectionAndManipulation
         private void Press(bool activeState)
         {
             OnPress?.Invoke(_isActive);
+
+            if (!_moveOnPress) return;
             
             var originalPosition = _pressableTransform.localPosition;
             var pressedPosition = originalPosition + Vector3.down * pressMoveFactor;
@@ -76,6 +79,11 @@ namespace _Core.Scripts.SelectionAndManipulation
                     // Animate the move back to the original position (release effect)
                     _pressableTransform.DOLocalMove(originalPosition, releaseDuration).SetEase(releaseEase);
                 });
+        }
+        
+        public void SetMoveOnPress(bool moveOnPress)
+        {
+            _moveOnPress = moveOnPress;
         }
     }
 }

@@ -22,6 +22,7 @@ namespace _Core.Scripts.SelectionAndManipulation
         private bool _readyToPress = false;
         private bool _isActive = false;
         private bool _moveOnPress = true;
+        private bool _needHold = false;
         
         private void Awake()
         {
@@ -63,7 +64,7 @@ namespace _Core.Scripts.SelectionAndManipulation
             _readyToPress = false;
         }
 
-        private void Press(bool activeState)
+        public void Press(bool activeState)
         {
             OnPress?.Invoke(_isActive);
 
@@ -83,6 +84,11 @@ namespace _Core.Scripts.SelectionAndManipulation
         public void SetMoveOnPress(bool moveOnPress)
         {
             _moveOnPress = moveOnPress;
+        }
+        
+        public void SetIsActive(bool isActive)
+        {
+            _isActive = isActive;
         }
     }
 }

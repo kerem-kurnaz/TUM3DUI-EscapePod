@@ -32,6 +32,13 @@ namespace _Core.Scripts.Level
         {
             if (_isJoystickActive)
             {
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    joystickArmTransform.transform.rotation = Quaternion.identity;
+                    _isJoystickActive = false;
+                    _pressable.SetIsActive(false);
+                    return;
+                }
                 var isTowardsLeft = HelperFunctions.IsForwardTowardsRight(GameManager.Instance.Selector.GetSelectorStartPoint(), transform);
                 if (isTowardsLeft)
                 {
@@ -43,6 +50,10 @@ namespace _Core.Scripts.Level
                     HelperFunctions.RotateObjectZ(craneArmTransform, 90f);
                     RotateJoystickArm(30f);
                 }
+            }
+            else
+            {
+                joystickArmTransform.transform.rotation = Quaternion.identity;
             }
         }
 

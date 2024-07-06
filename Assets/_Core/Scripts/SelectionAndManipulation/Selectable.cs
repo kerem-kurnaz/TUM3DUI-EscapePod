@@ -20,6 +20,7 @@ namespace _Core.Scripts.SelectionAndManipulation
         private bool _activeState = false;
         
         private bool _isBeingMoved = false;
+        private bool _canSelect = true;
 
         private void Awake()
         {
@@ -52,6 +53,8 @@ namespace _Core.Scripts.SelectionAndManipulation
 
         public void Select()
         {
+            if (!_canSelect) return;
+            
             _activeState = true;
             _renderer.material = highlightMaterial;
             OnSelect?.Invoke();
@@ -90,6 +93,14 @@ namespace _Core.Scripts.SelectionAndManipulation
             if (!_activeState)
             {
                 _renderer.material = _defaultMaterial;
+            }
+        }
+        public void SetCanSelect(bool canSelect)
+        {
+            _canSelect = canSelect;
+            if (!canSelect && _activeState)
+            {
+                DeSelect();
             }
         }
     }

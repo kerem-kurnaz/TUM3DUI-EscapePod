@@ -6,6 +6,8 @@ namespace _Core.Scripts.SelectionAndManipulation
 {
     public class Snapper : MonoBehaviour
     {
+        public Action OnSnap;
+        public Snappable CurrentSnappable => _currentSnappable;
         [SerializeField] private Transform snapperObject;
         [SerializeField] private SnapType snapperType;
         private Snappable _currentSnappable;
@@ -62,6 +64,7 @@ namespace _Core.Scripts.SelectionAndManipulation
                 _isSnapped = true;
                 DestroyHighlightClone();
                 _currentSnappable.SnapToPosition(GetSnapPosition(snapperObject));
+                OnSnap?.Invoke();
             }
         }
 

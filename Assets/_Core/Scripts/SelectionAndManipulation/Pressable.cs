@@ -37,7 +37,7 @@ namespace _Core.Scripts.SelectionAndManipulation
 
         private void Update()
         {
-            if (_readyToPress && Input.GetKeyDown(KeyCode.E))
+            if (_readyToPress && Input.GetKeyDown(KeyCode.Space))
             {
                 if (_isActive)
                 {

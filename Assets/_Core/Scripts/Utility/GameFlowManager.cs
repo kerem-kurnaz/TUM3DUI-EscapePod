@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using _Core.Scripts.Level;
+using NavKeypad;
 using UnityEngine;
 
 namespace _Core.Scripts.Utility
@@ -58,10 +59,14 @@ namespace _Core.Scripts.Utility
         public static Action OnBeforeStartGame;
         public static Action OnStartGame;
         public static Action OnOxygenGameEnd;
+        public static Action OnKeypadGameEnd;
+        
+        [SerializeField] private Keypad _keypad;
 
         private int _oxygenTankCount = 0;
         private void Start()
         {
+            _keypad.enabled = false;
             StartCoroutine(StartGame());
         }
 
@@ -81,13 +86,27 @@ namespace _Core.Scripts.Utility
             OnStartGame?.Invoke();
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                OxygenGameEnd();
+            }
+        }
+
         public void InsertOxygenTank()
         {
             _oxygenTankCount++;
             if (_oxygenTankCount >= 2)
             {
-                OnOxygenGameEnd?.Invoke();
+                OxygenGameEnd();
             }
+        }
+
+        private void OxygenGameEnd()
+        {
+            OnOxygenGameEnd?.Invoke();
+            _keypad.enabled = true;
         }
     }
 }

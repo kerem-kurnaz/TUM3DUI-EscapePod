@@ -28,7 +28,7 @@ namespace _Core.Scripts.Utility
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                //TriggerShake();
+                TriggerShake();
             }
         }
 

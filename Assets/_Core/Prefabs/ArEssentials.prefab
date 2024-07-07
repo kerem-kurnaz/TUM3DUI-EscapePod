@@ -172,6 +172,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 125276274781618150}
     m_Modifications:
+    - target: {fileID: 2957294949271961500, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
+      propertyPath: shakeDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2957294949271961500, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
+      propertyPath: shakeMagnitude
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3409643559987381892, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
       propertyPath: m_Name
       value: MultiTarget
@@ -247,6 +255,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6218590528810957429, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3567952993634182547}
+    - targetCorrespondingSourceObject: {fileID: 6218590528810957429, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2685526552328572409}
   m_SourcePrefab: {fileID: 100100000, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}
 --- !u!4 &1286531187925207434 stripped
 Transform:
@@ -282,6 +293,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomAmount: 30
+--- !u!114 &2685526552328572409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4356234749696090798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f49485149371f4ca411af566f22cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomOutLocation: {fileID: 0}
+  zoomOutTime: 10
+  ease: 6
 --- !u!1 &5001765872214515295 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3409643559987381892, guid: 1907ada93aed15e4f9a344207de6b0b5, type: 3}

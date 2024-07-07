@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace _Core.Scripts.Utility
@@ -10,6 +11,11 @@ namespace _Core.Scripts.Utility
         private void Awake()
         {
             _initialRotation = transform.rotation;
+        }
+
+        private void Start()
+        {
+            GameFlowManager.OnGameEnd += ResetRotation;
         }
 
         private void Update()
@@ -42,20 +48,13 @@ namespace _Core.Scripts.Utility
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-                transform.rotation = _initialRotation;
+                ResetRotation();
             }
         }
 
-        void RotateTowardsTargetDirection(Vector3 targetDirection, float rotationSpeed)
+        private void ResetRotation()
         {
-            // Normalize the target direction to ensure it's a unit vector
-            Vector3 normalizedDirection = targetDirection.normalized;
-
-            // Calculate the target rotation based on the desired direction
-            Quaternion targetRotation = Quaternion.LookRotation(normalizedDirection);
-
-            // Smoothly rotate towards the target rotation using Slerp for smooth interpolation
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+            transform.rotation = _initialRotation;
         }
     }
 }

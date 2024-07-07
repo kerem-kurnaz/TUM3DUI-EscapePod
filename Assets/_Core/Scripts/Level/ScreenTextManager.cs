@@ -11,7 +11,8 @@ namespace _Core.Scripts.Level
     {
         [SerializeField] private TextMeshProUGUI topText;
         [SerializeField] private TextMeshProUGUI bottomText;
-        [SerializeField] private string keypadGameText = "INTRUDER DETECTED<br> <- ENTER PASSCODE TO KEYPAD <-";
+        [SerializeField] private string keypadGameText = "INTRUDER DETECTED<br>SELF DESTRUCT INITIATED<br> <- ENTER PASSCODE TO KEYPAD <-";
+        [SerializeField] private string endGameText = "WELCOME, AGENT<br><br>MISSION ACCOMPLISHED";
         
         private bool _canFlash = true;
         
@@ -27,6 +28,7 @@ namespace _Core.Scripts.Level
         {
             GameFlowManager.OnStartGame += StartText;
             GameFlowManager.OnOxygenGameEnd += OxygenGameEnd;
+            GameFlowManager.OnKeyPadGameEnd += KeyPadGameEnd;
         }
 
         private void StartText()
@@ -51,6 +53,11 @@ namespace _Core.Scripts.Level
             topText.enabled = true;
             bottomText.enabled = false;
             topText.text = keypadGameText;
+        }
+        
+        private void KeyPadGameEnd()
+        {
+            topText.text = endGameText;
         }
     }
 }

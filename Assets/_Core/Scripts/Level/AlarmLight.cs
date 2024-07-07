@@ -17,7 +17,8 @@ namespace _Core.Scripts.Level
         private bool _increasing = true; 
         private AudioSource _alarmSound;
         private AudioLowPassFilter _lowPassFilter;
-
+        private Tweener _tweener;
+        
         private void Awake()
         {
             _light = GetComponentInChildren<Light>();
@@ -30,19 +31,20 @@ namespace _Core.Scripts.Level
             _alarmSound.Play();
             GameFlowManager.OnStartGame += () => SetAlarmLightState(true);
             GameFlowManager.OnOxygenGameEnd += () => SetAlarmLightState(false);
+            GameFlowManager.OnKeyPadGameEnd += StopLights;
         }
 
         private void LoopAlarmLightIntensity()
         {
-            if (!_isActive)
-            {
-                _light.color = Color.white;
-                _light.DOIntensity(1f, lightIncreaseDuration).SetEase(ease); 
-                return; 
-            }
+            // if (!_isActive)
+            // {
+            //     //_light.color = Color.white;
+            //     //_light.DOIntensity(1f, lightIncreaseDuration).SetEase(ease); 
+            //     return; 
+            // }
 
             var targetIntensity = _increasing ? minMaxIntensity.y : minMaxIntensity.x;
-            _light.DOIntensity(targetIntensity, lightIncreaseDuration)
+            _tweener = _light.DOIntensity(targetIntensity, lightIncreaseDuration)
                 .SetEase(ease)
                 .OnComplete(() =>
                 {
@@ -54,16 +56,22 @@ namespace _Core.Scripts.Level
         private void SetAlarmLightState(bool isActive)
         {
             _isActive = isActive;
-            LoopAlarmLightIntensity();
             if (_isActive)
             {
                 SlowlyIncreaseLowPassFilter();
+                LoopAlarmLightIntensity();
             }
             else
             {
                 _alarmSound.Stop();
-                
             }
+        }
+
+        private void StopLights()
+        {
+            _tweener.Kill();
+            _light.color = Color.white;
+            _light.DOIntensity(1f, lightIncreaseDuration).SetEase(ease); 
         }
 
         private void SlowlyIncreaseLowPassFilter()

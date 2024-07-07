@@ -138,7 +138,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 30, y: -30}
-  m_SizeDelta: {x: 400, y: 50}
+  m_SizeDelta: {x: 450, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1411066494915430998
 CanvasRenderer:
@@ -170,18 +170,21 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Controls:
 
-    - Use the cube to look around
+    - Use the marker cube to look around
 
-    - Point at an object
-    to make it highlighted
+    - Point at an
+    object to make it highlighted
 
-    - Press Space to interact with highlighted objects
+    - Press Space to interact with highlighted
+    objects
 
-    -
-    Hold Space to move highlighted objects
+    - Hold Space to move highlighted objects
 
-    - Hold Q or E to rotate to your look
-    direction (E Vertical, Q Horizontal)
+    - Hold W or S to move
+    moving objects (W Forwards, S Backwards)
+
+    - Hold Q or E to rotate to your
+    look direction (E Vertical, Q Horizontal)
 
     - Press R to reset your look direction
 
@@ -213,11 +216,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 14
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 14
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1

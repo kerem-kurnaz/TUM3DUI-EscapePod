@@ -126,6 +126,10 @@ namespace NavKeypad
             panelMesh.material.SetVector("_EmissionColor", screenGrantedColor * screenIntensity);
             audioSource.PlayOneShot(accessGrantedSfx);
         }
-
+        
+        public void SetKeyPadCombo(int newCombo)
+        {
+            keypadCombo = newCombo;
+        }
     }
 }

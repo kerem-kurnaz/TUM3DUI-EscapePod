@@ -14,6 +14,11 @@ namespace _Core.Scripts.Utility
         
         private Vector3 _initialPosition;
 
+        private void Start()
+        {
+            GameFlowManager.OnStartGame += TriggerShake;
+        }
+
         private void OnEnable()
         {
             _initialPosition = transform.localPosition;
@@ -26,10 +31,10 @@ namespace _Core.Scripts.Utility
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                TriggerShake();
-            }
+            // if (Input.GetKeyDown(KeyCode.F))
+            // {
+            //     TriggerShake();
+            // }
         }
 
         private IEnumerator Shake()

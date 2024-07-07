@@ -59,15 +59,18 @@ namespace _Core.Scripts.Utility
         public static Action OnBeforeStartGame;
         public static Action OnStartGame;
         public static Action OnOxygenGameEnd;
-        public static Action OnKeypadGameEnd;
+        public static Action OnKeypadGameStart;
+        public static Action OnKeyPadGameEnd;
+        public static Action OnGameEnd;
         
         [SerializeField] private Keypad _keypad;
 
         private int _oxygenTankCount = 0;
         private void Start()
         {
-            _keypad.enabled = false;
+            _keypad.SetKeyPadCombo(147428003);
             StartCoroutine(StartGame());
+            _keypad.OnAccessGranted.AddListener(KeypadGameEnd);
         }
 
         private void OnDisable()
@@ -75,6 +78,9 @@ namespace _Core.Scripts.Utility
             OnBeforeStartGame = null;
             OnStartGame = null;
             OnOxygenGameEnd = null;
+            OnKeypadGameStart = null;
+            OnKeyPadGameEnd = null;
+            _keypad.OnAccessGranted.RemoveListener(KeypadGameEnd);
         }
 
         private IEnumerator StartGame()
@@ -107,6 +113,19 @@ namespace _Core.Scripts.Utility
         {
             OnOxygenGameEnd?.Invoke();
             _keypad.enabled = true;
+            _keypad.SetKeyPadCombo(256099);
+        }
+
+        private void KeypadGameEnd()
+        {
+            StartCoroutine(StartKeypadGameEnd());
+        }
+
+        private IEnumerator StartKeypadGameEnd()
+        {
+            OnKeyPadGameEnd?.Invoke();
+            yield return new WaitForSeconds(6f);
+            OnGameEnd?.Invoke();
         }
     }
 }

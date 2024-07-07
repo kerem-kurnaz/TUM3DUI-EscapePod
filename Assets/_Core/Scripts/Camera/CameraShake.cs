@@ -29,14 +29,6 @@ namespace _Core.Scripts.Utility
             StartCoroutine(Shake());
         }
 
-        private void Update()
-        {
-            // if (Input.GetKeyDown(KeyCode.F))
-            // {
-            //     TriggerShake();
-            // }
-        }
-
         private IEnumerator Shake()
         {
             var elapsed = 0.0f;

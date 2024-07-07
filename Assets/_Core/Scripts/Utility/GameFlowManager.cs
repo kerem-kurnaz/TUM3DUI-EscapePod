@@ -92,14 +92,6 @@ namespace _Core.Scripts.Utility
             OnStartGame?.Invoke();
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                OxygenGameEnd();
-            }
-        }
-
         public void InsertOxygenTank()
         {
             _oxygenTankCount++;

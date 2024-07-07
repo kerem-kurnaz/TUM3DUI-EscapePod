@@ -9,8 +9,8 @@ Installation and Launching Steps:
 
 1- Clone the repo
 
-2- Use "Add project from disk" option in Unity Hub
+2- Use "Add project from disk" option in Unity Hub and add the project
 
-3- Open the "FinalScene" scene in the project's Assets/FinalScene path
+3- Open the "FinalScene" scene in the project's Assets/FinalScene path to play the game
 
 4- Enjoy! :)

@@ -1,6 +1,22 @@
 Escape Pod
 
 
+Gameplay Trailer: https://youtu.be/JIA6Db94oRw
+
+
+Controls:
+
+- Use the marker cube to look around
+- Point at an object to make it highlighted
+- Press Space to interact with highlighted objects
+- Hold Space to move highlighted objects
+- Hold W or S to move moving objects (W Forwards, S Backwards)
+- Hold Q or E to rotate to your look direction (E Vertical, Q Horizontal)
+- Press R to reset your look direction
+- Press Z to toggle zoom
+
+
+
 Unity Editor version: 2022.3.33f1
 
 
@@ -23,15 +39,3 @@ External Assets Used:
 - Oxygen Regulator 3D Model: https://sketchfab.com/3d-models/oxygen-regulator-b1cf9a15989a4e80b60b0037325bf8a5
 - Oxygen Tube 3D Model: https://sketchfab.com/3d-models/sci-fi-oxygen-tank-8fc54f9755044f2d80c9205c6bc75c98
 - Warning Light 3D Model: https://www.cgtrader.com/free-3d-models/electronics/other/alarm-8bc225a0-cf40-4b98-8379-b647fc4eb86b
-
-
-Controls:
-
-- Use the marker cube to look around
-- Point at an object to make it highlighted
-- Press Space to interact with highlighted objects
-- Hold Space to move highlighted objects
-- Hold W or S to move moving objects (W Forwards, S Backwards)
-- Hold Q or E to rotate to your look direction (E Vertical, Q Horizontal)
-- Press R to reset your look direction
-- Press Z to toggle zoom
